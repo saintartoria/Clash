@@ -58,83 +58,268 @@ Proxy:
 Proxy Group:
 
 # url-test 通过指定的 URL 测试并选择延迟最低的节点
-- name: "UrlTest"
+- name: UrlTest
   type: url-test
   proxies:
-    - "1"
-    - "2"
-    - "3"
-    - "4"
+    - u9un-v2-HK-HongKong 1
+    - u9un-v2-HK-HongKong 2
+    - u9un-v2-HK-HongKong 3
+    - u9un-v2-HK-HongKong 4
+    - u9un-v2-HK-HongKong 5
+    - u9un-v2-HK-HongKong 6
+    - u9un-v2-HK-HongKong 7
+    - u9un-v2-HK-HongKong 8
+    - u9un-v2-HK-HongKong 9
+    - u9un-v2-HK-HongKong 0
+    - u9un-v2-JP-Tokyo 1
+    - u9un-v2-JP-Tokyo 2
+    - u9un-v2-JP-Tokyo 3
+    - u9un-v2-JP-Tokyo 4
+    - u9un-v2-JP-Tokyo 5
+    - u9un-v2-JP-Tokyo 6
+    - u9un-v2-TW-Taipei 1
+    - u9un-v2-TW-Taipei 2
+    - u9un-v2-SG-Singapore 1
+    - u9un-v2-SG-Singapore 2
+    - u9un-v2-SG-Singapore 3
+    - u9un-v2-SG-Singapore 4
+    - u9un-v2-SG-Singapore 5
+    - u9un-v2-IN-India 1
+    - u9un-v2-IN-India 2
+    - u9un-v2-KR-Seoul
+    - u9un-v2-MY-Malaysia
+    - u9un-v2-TH-Thailand
+    - u9un-v2-US-LosAngeles
+    - u9un-v2-US-New York
+    - u9un-v2-US-Dallas
+    - u9un-v2-US-Buffalo
+    - u9un-v2-US-Phoenix
   url: 'http://www.gstatic.com/generate_204'
   interval: 300
 
 # fallback 通过指定的 URL 测试并选择可用的节点，当 1 故障不可用时自动切换到 2 以此类推
-- name: "Fallback"
+- name: Fallback
   type: fallback
   proxies:
-    - "1"
-    - "2"
-    - "3"
-    - "4"
+    - u9un-v2-HK-HongKong 1
+    - u9un-v2-HK-HongKong 2
+    - u9un-v2-HK-HongKong 3
+    - u9un-v2-HK-HongKong 4
+    - u9un-v2-HK-HongKong 5
+    - u9un-v2-HK-HongKong 6
+    - u9un-v2-HK-HongKong 7
+    - u9un-v2-HK-HongKong 8
+    - u9un-v2-HK-HongKong 9
+    - u9un-v2-HK-HongKong 0
+    - u9un-v2-JP-Tokyo 1
+    - u9un-v2-JP-Tokyo 2
+    - u9un-v2-JP-Tokyo 3
+    - u9un-v2-JP-Tokyo 4
+    - u9un-v2-JP-Tokyo 5
+    - u9un-v2-JP-Tokyo 6
+    - u9un-v2-TW-Taipei 1
+    - u9un-v2-TW-Taipei 2
+    - u9un-v2-SG-Singapore 1
+    - u9un-v2-SG-Singapore 2
+    - u9un-v2-SG-Singapore 3
+    - u9un-v2-SG-Singapore 4
+    - u9un-v2-SG-Singapore 5
+    - u9un-v2-IN-India 1
+    - u9un-v2-IN-India 2
+    - u9un-v2-KR-Seoul
+    - u9un-v2-MY-Malaysia
+    - u9un-v2-TH-Thailand
+    - u9un-v2-US-LosAngeles
+    - u9un-v2-US-New York
+    - u9un-v2-US-Dallas
+    - u9un-v2-US-Buffalo
+    - u9un-v2-US-Phoenix
   url: 'http://www.gstatic.com/generate_204'
   interval: 300
 
 load-balance: 负载均衡
-- name: "LoadBalance"
+- name: LoadBalance
   type: load-balance
   proxies:
-    - "1"
-    - "2"
-    - "3"
-    - "4"
+    - u9un-v2-HK-HongKong 1
+    - u9un-v2-HK-HongKong 2
+    - u9un-v2-HK-HongKong 3
+    - u9un-v2-HK-HongKong 4
+    - u9un-v2-HK-HongKong 5
+    - u9un-v2-HK-HongKong 6
+    - u9un-v2-HK-HongKong 7
+    - u9un-v2-HK-HongKong 8
+    - u9un-v2-HK-HongKong 9
+    - u9un-v2-HK-HongKong 0
+    - u9un-v2-JP-Tokyo 1
+    - u9un-v2-JP-Tokyo 2
+    - u9un-v2-JP-Tokyo 3
+    - u9un-v2-JP-Tokyo 4
+    - u9un-v2-JP-Tokyo 5
+    - u9un-v2-JP-Tokyo 6
+    - u9un-v2-TW-Taipei 1
+    - u9un-v2-TW-Taipei 2
+    - u9un-v2-SG-Singapore 1
+    - u9un-v2-SG-Singapore 2
+    - u9un-v2-SG-Singapore 3
+    - u9un-v2-SG-Singapore 4
+    - u9un-v2-SG-Singapore 5
+    - u9un-v2-IN-India 1
+    - u9un-v2-IN-India 2
+    - u9un-v2-KR-Seoul
+    - u9un-v2-MY-Malaysia
+    - u9un-v2-TH-Thailand
+    - u9un-v2-US-LosAngeles
+    - u9un-v2-US-New York
+    - u9un-v2-US-Dallas
+    - u9un-v2-US-Buffalo
+    - u9un-v2-US-Phoenix
   url: 'http://www.gstatic.com/generate_204'
   interval: 300
-
 # 代理节点选择
-- name: "PROXY"
+- name: 手动切换
   type: select
   proxies:
-    - "UrlTest"
-    - "1"
-    - "2"
-    - "3"
-    - "4"
+    - u9un-v2-HK-HongKong 1
+    - u9un-v2-HK-HongKong 2
+    - u9un-v2-HK-HongKong 3
+    - u9un-v2-HK-HongKong 4
+    - u9un-v2-HK-HongKong 5
+    - u9un-v2-HK-HongKong 6
+    - u9un-v2-HK-HongKong 7
+    - u9un-v2-HK-HongKong 8
+    - u9un-v2-HK-HongKong 9
+    - u9un-v2-HK-HongKong 0
+    - u9un-v2-JP-Tokyo 1
+    - u9un-v2-JP-Tokyo 2
+    - u9un-v2-JP-Tokyo 3
+    - u9un-v2-JP-Tokyo 4
+    - u9un-v2-JP-Tokyo 5
+    - u9un-v2-JP-Tokyo 6
+    - u9un-v2-TW-Taipei 1
+    - u9un-v2-TW-Taipei 2
+    - u9un-v2-SG-Singapore 1
+    - u9un-v2-SG-Singapore 2
+    - u9un-v2-SG-Singapore 3
+    - u9un-v2-SG-Singapore 4
+    - u9un-v2-SG-Singapore 5
+    - u9un-v2-IN-India 1
+    - u9un-v2-IN-India 2
+    - u9un-v2-KR-Seoul
+    - u9un-v2-MY-Malaysia
+    - u9un-v2-TH-Thailand
+    - u9un-v2-US-LosAngeles
+    - u9un-v2-US-New York
+    - u9un-v2-US-Dallas
+    - u9un-v2-US-Buffalo
+    - u9un-v2-US-Phoenix
+- name: Hong Kong
+  type: url-test
+  proxies:
+    - u9un-v2-HK-HongKong 1
+    - u9un-v2-HK-HongKong 2
+    - u9un-v2-HK-HongKong 3
+    - u9un-v2-HK-HongKong 4
+    - u9un-v2-HK-HongKong 5
+    - u9un-v2-HK-HongKong 6
+    - u9un-v2-HK-HongKong 7
+    - u9un-v2-HK-HongKong 8
+    - u9un-v2-HK-HongKong 9
+    - u9un-v2-HK-HongKong 0
+  url: 'http://www.gstatic.com/generate_204'
+- name: Taiwan
+  type: url-test
+  proxies:
+    - u9un-v2-TW-Taipei 1
+    - u9un-v2-TW-Taipei 2
+  url: 'http://www.gstatic.com/generate_204'
+- name: Singapore
+  type: url-test
+  proxies:
+    - u9un-v2-SG-Singapore 1
+    - u9un-v2-SG-Singapore 2
+    - u9un-v2-SG-Singapore 3
+    - u9un-v2-SG-Singapore 4
+    - u9un-v2-SG-Singapore 5
+  url: 'http://www.gstatic.com/generate_204'
+- name: Japan
+  type: url-test
+  proxies:
+    - u9un-v2-JP-Tokyo 1
+    - u9un-v2-JP-Tokyo 2
+    - u9un-v2-JP-Tokyo 3
+    - u9un-v2-JP-Tokyo 4
+    - u9un-v2-JP-Tokyo 5
+    - u9un-v2-JP-Tokyo 6
+  url: 'http://www.gstatic.com/generate_204'
+- name: United States
+  type: url-test
+  proxies:
+    - u9un-v2-US-LosAngeles
+    - u9un-v2-US-New York
+    - u9un-v2-US-Dallas
+    - u9un-v2-US-Buffalo
+    - u9un-v2-US-Phoenix
+  url: 'http://www.gstatic.com/generate_204'
+ - name: Others
+  type: url-test
+  proxies:
+    - u9un-v2-IN-India 1
+    - u9un-v2-IN-India 2
+    - u9un-v2-KR-Seoul
+    - u9un-v2-MY-Malaysia
+    - u9un-v2-TH-Thailand
+  url: 'http://www.gstatic.com/generate_204'
+- name: PROXY
+  type: select
+  proxies:
+    - UrlTest
+    - Hong Kong
+    - Taiwan
+    - Singapore
+    - Japan
+    - United States
+    - Others
+    - 手动切换
 # 白名单模式 PROXY，黑名单模式 DIRECT
-- name: "Final"
+- name: Final
   type: select
   proxies:
-    - "PROXY"
-    - "DIRECT"
+    - PROXY
+    - DIRECT
 # 国际流媒体服务
-- name: "GlobalMedia"
+- name: GlobalMedia
   type: select
   proxies:
-    - "PROXY"
-    - "1"
-    - "2"
-    - "3"
-    - "4"
+    - DIRECT
+    - Hong Kong
+    - Taiwan
+    - Singapore
+    - Japan
+    - United States
+    - Others
+    - 手动切换
 # 大陆流媒体面向港澳台限定服务
-- name: "HKMTMedia"
+- name: HKMTMedia
   type: select
   proxies:
-    - "DIRECT"
-    - "1"
-    - "2"
-    - "3"
-    - "4"
+    - DIRECT
+    - Hong Kong
+    - Taiwan
+    - 手动切换
 # 运营商及声名狼藉网站劫持
-- name: "Hijacking"
+- name: Hijacking
   type: select
   proxies:
-    - "REJECT"
-    - "DIRECT"
+    - REJECT
+    - DIRECT
 # 广告屏蔽
-- name: "AdBlock"
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
+- name: AdBlock
+  type: select
+  proxies:
+    - REJECT
+    - DIRECT
+
 # 规则
 Rule:
 # Ads in Video apps
