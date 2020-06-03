@@ -1,0 +1,103 @@
+# AsianMedia.list
+# > Bilibili
+DOMAIN-KEYWORD,bilibili
+DOMAIN-SUFFIX,acg.tv
+DOMAIN-SUFFIX,acgvideo.com
+DOMAIN-SUFFIX,b23.tv
+DOMAIN-SUFFIX,biliapi.com
+DOMAIN-SUFFIX,biliapi.net
+DOMAIN-SUFFIX,bilibili.com
+DOMAIN-SUFFIX,bilibili.tv
+DOMAIN-SUFFIX,biligame.com
+DOMAIN-SUFFIX,biligame.net
+DOMAIN-SUFFIX,bilivideo.com
+DOMAIN-SUFFIX,hdslb.com
+DOMAIN-SUFFIX,im9.com
+DOMAIN,upos-hz-mirrorakam.akamaized.net
+USER-AGENT,*bili*
+IP-CIDR,119.29.29.29/32
+IP-CIDR,203.107.1.34/32
+IP-CIDR,203.107.1.65/32
+IP-CIDR,203.107.1.66/32
+IP-CIDR,150.116.92.250/32
+# > IQIYI
+host-keyword,qiyi
+host-suffix,71.am.com
+host-suffix,qy.net
+ip-cidr,101.224.0.0/13
+ip-cidr,101.227.0.0/16
+ip-cidr,119.176.0.0/12
+user-agent,iQiYi*
+user-agent,QIYI*
+USER-AGENT,PPStream*
+USER-AGENT,QYPlayer*
+HOST-SUFFIX,iqiyi.com
+HOST-SUFFIX,iqiyipic.com
+HOST-SUFFIX,qy.net
+HOST-SUFFIX,71.am
+# > letv
+HOST-SUFFIX,api.mob.app.letv.com
+HOST-SUFFIX,letv.com
+# > MOO
+user-agent,MOO*
+user-agent,TencentMidasConnect*
+# > Tencent Video
+host-suffix,vv.video.qq.com
+# > Youku
+USER-AGENT,Youku*
+USER-AGENT,%E4%BC%98%E9%85%B7*
+HOST-SUFFIX,soku.com
+HOST-SUFFIX,youku.com
+HOST-SUFFIX,ykimg.com
+ip-cidr, 106.11.0.0/16
+# > Migu
+USER-AGENT,MiguVideo*
+USER-AGENT,%E5%92%AA%E5%92%95%E8%A7%86%E9%A2%91
+HOST-SUFFIX,cmvideo.cn
+HOST-SUFFIX,migu.cn
+HOST-SUFFIX,miguvideo.com
+# > MGTV
+USER-AGENT,MGTV*
+HOST-SUFFIX,hitv.com
+HOST-SUFFIX,hunantv.com
+HOST-SUFFIX,mgtv.com
+# > Xiami Music
+USER-AGENT,walkman*
+USER-AGENT,xiami*
+HOST-SUFFIX,xiami.com
+HOST-SUFFIX,xiami.net
+# > QQMusic
+USER-AGENT,QQ%e9%9f%b3%e4%b9%90*
+USER-AGENT,QQMusic*
+HOST-SUFFIX,*music.qq.com
+HOST-SUFFIX,y.qq.com
+HOST,aqqmusic.tc.qq.com
+# > Netease Music
+USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90
+USER-AGENT,NeteaseMusic*
+HOST-SUFFIX,music.126.net
+HOST-SUFFIX,music.163.com
+IP-CIDR,39.105.63.80/32
+IP-CIDR,45.254.48.1/32
+IP-CIDR,47.100.127.239/32
+IP-CIDR,59.111.160.195/32
+IP-CIDR,59.111.160.197/32
+IP-CIDR,59.111.181.35/32
+IP-CIDR,59.111.181.38/32
+IP-CIDR,59.111.181.60/32
+IP-CIDR,101.71.154.241/32
+IP-CIDR,103.126.92.132/32
+IP-CIDR,103.126.92.133/32
+IP-CIDR,112.13.119.17/32
+IP-CIDR,112.13.122.1/32
+IP-CIDR,115.236.118.33/32
+IP-CIDR,115.236.121.1/32
+IP-CIDR,118.24.63.156/32
+IP-CIDR,193.112.159.225/32
+IP-CIDR,223.252.199.66/32
+IP-CIDR,223.252.199.67/32
+# > Kugou & Kuwo
+HOST-SUFFIX,kugou.com
+USER-AGENT,%E9%85%B7%E6%88%91%E9%9F%B3%E4%B9%90*
+HOST-SUFFIX,kuwo.cn
+HOST-SUFFIX,koowo.com
