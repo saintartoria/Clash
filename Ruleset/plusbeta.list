@@ -1,5 +1,21 @@
-DOMAIN-SUFFIX,nyancat.net 
-DOMAIN-SUFFIX,xeton.dev
-DOMAIN-SUFFIX,nexitally.com
+# > 流媒体emby-mdss服务器
+DOMAIN,emby.mdss.cloud
+
+# > 流媒体emby-nexitally服务器
+DOMAIN,emby.nexitally.com
+
+# > 流媒体emby-ytoo服务器
+DOMAIN,emby.ytoo.li
+
+# > 流媒体emby-nyancat服务器
+DOMAIN,emby.nyancat.net
+
+# > 流媒体emby体验服
+DOMAIN,movie.xeton.dev
+DOMAIN,plus.xeton.dev
+DOMAIN,emby.xeton.dev
+DOMAIN,kodi.xeton.dev
+DOMAIN,jellyfin.xeton.dev
+DOMAIN,emby-best.xeton.dev
 IP-CIDR,104.24.110.179/32
 IP-CIDR,104.28.1.122/32
