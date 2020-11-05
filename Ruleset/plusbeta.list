@@ -9,7 +9,8 @@ DOMAIN,emby.ytoo.li
 
 # > 流媒体emby-nyancat服务器
 DOMAIN,emby.nyancat.net
-
+# > 流媒体emby-yoyu服务器
+DOMAIN,emby.yoyu.ltd
 # > 流媒体emby体验服
 DOMAIN,movie.xeton.dev
 DOMAIN,plus.xeton.dev
