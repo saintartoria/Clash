@@ -1,12 +1,11 @@
 # > 流媒体emby-mdss服务器
 DOMAIN,emby.mdss.cloud
-
 # > 流媒体emby-nexitally服务器
 DOMAIN,emby.nexitally.com
-
 # > 流媒体emby-ytoo服务器
 DOMAIN,emby.ytoo.li
-
+# > 流媒体emby-prpr服务器
+DOMAIN,emby.prprcloud.com
 # > 流媒体emby-nyancat服务器
 DOMAIN,emby.nyancat.net
 # > 流媒体emby-yoyu服务器
