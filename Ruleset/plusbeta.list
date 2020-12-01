@@ -21,6 +21,7 @@ DOMAIN,kodi.xeton.dev
 DOMAIN,jellyfin.xeton.dev
 DOMAIN,emby-best.xeton.dev
 DOMAIN,emby.mickeycloud.com
+DOMAIN,emby.otakudrive.life
 IP-CIDR,104.24.110.179/32
 IP-CIDR,104.28.1.122/32
 IP-CIDR,104.149.196.242/32
