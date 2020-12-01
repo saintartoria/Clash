@@ -1,3 +1,5 @@
+# > 流媒体emby-paoche服务器
+DOMAIN,emby.cjpc.xyz
 # > 流媒体emby-mdss服务器
 DOMAIN,emby.mdss.cloud
 # > 流媒体emby-nexitally服务器
@@ -22,3 +24,4 @@ DOMAIN,emby-best.xeton.dev
 DOMAIN,emby.mickeycloud.com
 IP-CIDR,104.24.110.179/32
 IP-CIDR,104.28.1.122/32
+IP-CIDR,104.149.196.242/32
