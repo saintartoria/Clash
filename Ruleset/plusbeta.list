@@ -24,6 +24,8 @@ DOMAIN,emby-best.xeton.dev
 DOMAIN,emby.mickeycloud.com
 DOMAIN,emby.otakudrive.life
 DOMAIN,emby-dns-purge.ok.edu.hk
+DOMAIN,pub1.emby.wtf
+DOMAIN,pub1cf.emby.wtf
 IP-CIDR,104.24.110.179/32
 IP-CIDR,104.28.1.122/32
 IP-CIDR,51.79.167.36/32
