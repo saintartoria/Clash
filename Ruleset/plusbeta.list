@@ -1,6 +1,7 @@
 # > 流媒体emby-paoche服务器
 DOMAIN,emby.cjpc.xyz
 DOMAIN,emby.paoche.ooo
+DOMAIN,emby-aga.cjpc.xyz
 # > 流媒体emby-mdss服务器
 DOMAIN,emby.mdss.cloud
 # > 流媒体emby-nexitally服务器
@@ -32,3 +33,4 @@ IP-CIDR,51.79.167.36/32
 IP-CIDR,42.2.117.204/32
 IP-CIDR,104.149.196.242/32
 IP-CIDR,42.2.114.45/32
+IP-CIDR,13.230.44.104/32
