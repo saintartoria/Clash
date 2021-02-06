@@ -18,12 +18,14 @@ DOMAIN,emby.yoyu.ltd
 DOMAIN,movie.xeton.dev
 # > 流媒体emby体验服
 DOMAIN,aga1.kwz.io
-DOMAIN,iij1.kwz.io
-DOMAIN,hinet1.kwz.io
-DOMAIN,beer2.sason.top:
-DOMAIN,emby.kwz.io
 DOMAIN,aga2.kwz.io
-DOMAIN,gy1.kwz.io
+DOMAIN,agasg1.kwz.io
+DOMAIN,jpaga1.kwz.io
+DOMAIN,hinet1.kwz.io
+DOMAIN,ntt1.kwz.io
+DOMAIN,aws1.kwz.io
+DOMAIN,cf1.kwz.io
+DOMAIN,emby.zhouchu.online
 DOMAIN,plus.xeton.dev
 DOMAIN,emby.xeton.dev
 DOMAIN,kodi.xeton.dev
@@ -41,5 +43,4 @@ IP-CIDR,42.2.117.204/32
 IP-CIDR,104.149.196.242/32
 IP-CIDR,42.2.114.45/32
 IP-CIDR,13.230.44.104/32
-IP-CIDR,101.89.167.236/32
 IP-CIDR,18.166.226.44/32
