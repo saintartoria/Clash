@@ -17,6 +17,7 @@ DOMAIN,emby.yoyu.ltd
 # > 流媒体emby体验服
 DOMAIN,movie.xeton.dev
 # > 流媒体emby体验服
+DOMAIN,tv.dlj.tf
 DOMAIN,aga1.kwz.io
 DOMAIN,aga2.kwz.io
 DOMAIN,agasg1.kwz.io
@@ -25,6 +26,7 @@ DOMAIN,hinet1.kwz.io
 DOMAIN,ntt1.kwz.io
 DOMAIN,aws1.kwz.io
 DOMAIN,cf1.kwz.io
+DOMAIN,gy1.kwz.io
 DOMAIN,emby.zhouchu.online
 DOMAIN,plus.xeton.dev
 DOMAIN,emby.xeton.dev
@@ -45,4 +47,6 @@ IP-CIDR,42.2.114.45/32
 IP-CIDR,13.230.44.104/32
 IP-CIDR,18.166.226.44/32
 IP-CIDR,209.97.163.176/32
+IP-CIDR,178.170.46.165/32
 IP-CIDR,101.91.169.172/32
+IP-CIDR,59.36.151.43:12300/32
