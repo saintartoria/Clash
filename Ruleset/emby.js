@@ -29,7 +29,7 @@ DOMAIN,emby.ok.edu.hk
 DOMAIN,emby.neko.edu.rs 
 DOMAIN,pub1.emby.wtf
 DOMAIN,pub1cf.emby.wtf
-# > 流媒体emby-卷毛鼠体验服
+# > 流媒体emby-jmsooo体验服
 DOMAIN,agahk1.jmsooo.com
 DOMAIN,agasg1.jmsooo.com
 DOMAIN,agajp1.jmsooo.com
