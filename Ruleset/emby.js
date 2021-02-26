@@ -11,18 +11,19 @@ DOMAIN,emby.mdss.cloud
 DOMAIN,emby.nexitally.com
 # > 流媒体emby-ytoo服务器
 DOMAIN,emby.ytoo.li
+# > 流媒体emby-w8ves服务器
+DOMAIN,embyserver.ga
 # > 流媒体emby-prpr服务器
 DOMAIN,emby.prprcloud.com
 # > 流媒体emby-nyancat服务器
 DOMAIN,emby.nyancat.net
-# > 流媒体emby体验服
-DOMAIN,movie.xeton.dev
 # > 流媒体emby-Plus体验服
-DOMAIN,plus.xeton.dev
+DOMAIN,emby.plusmedia.site
+DOMAIN,emby-cf.plusmedia.site 
 DOMAIN,emby.xeton.dev
-DOMAIN,kodi.xeton.dev
 DOMAIN,jellyfin.xeton.dev
-DOMAIN,emby-best.xeton.dev
+DOMAIN,movie.xeton.dev
+DOMAIN,servers.xeton.dev
 # > 流媒体emby-Otaku体验服
 DOMAIN,emby.ok.edu.hk
 DOMAIN,emby.neko.edu.rs 
@@ -35,4 +36,4 @@ DOMAIN,agajp1.jmsooo.com
 DOMAIN,aws.jmsooo.com
 DOMAIN,ntt1.jmsooo.com
 DOMAIN,hinet.jmsooo.com
-CF通用 : https://cf1.jmsooo.com:443
+DOMAIN,cf1.jmsooo.com
