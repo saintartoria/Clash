@@ -1,6 +1,9 @@
 # > 流媒体emby-paoche服务器
 DOMAIN,emby.cjpc.xyz
 DOMAIN,emby.paoche.ooo
+DOMAIN,emby-hk.cjpc.cc
+DOMAIN,emby-aga.cjpc.cc
+DOMAIN,emby.cjpc.xyz
 # > 流媒体emby-flowercloud服务器
 DOMAIN,emby.flowercloud.yt
 # > 流媒体emby-maying服务器
@@ -42,3 +45,4 @@ IP-CIDR,209.97.163.176/32
 IP-CIDR,178.170.46.165/32
 IP-CIDR,217.79.241.247/32
 IP-CIDR,209.182.237.107/32
+IP-CIDR,18.163.191.129/32
