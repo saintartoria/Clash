@@ -1,8 +1,6 @@
 # > 流媒体emby-paoche服务器
 DOMAIN,emby.cjpc.xyz
 DOMAIN,emby.paoche.ooo
-DOMAIN,emby-hk.cjpc.cc
-DOMAIN,emby-aga.cjpc.cc
 DOMAIN,emby.cjpc.cc
 # > 流媒体emby-flowercloud服务器
 DOMAIN,emby.flowercloud.yt
@@ -41,6 +39,7 @@ DOMAIN,ntt1.jmsooo.com
 DOMAIN,hinet.jmsooo.com
 DOMAIN,cf1.jmsooo.com
 DOMAIN,tv.dlj.tf
+IP-CIDR,107.155.65.76/32
 IP-CIDR,209.97.163.176/32
 IP-CIDR,178.170.46.165/32
 IP-CIDR,217.79.241.247/32
