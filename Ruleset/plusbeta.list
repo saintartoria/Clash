@@ -38,6 +38,7 @@ DOMAIN,aws.jmsooo.com
 DOMAIN,ntt1.jmsooo.com
 DOMAIN,hinet.jmsooo.com
 DOMAIN,cf1.jmsooo.com
+IP-CIDR,140.238.199.164/32
 IP-CIDR,174.138.21.140/32
 IP-CIDR,107.155.65.76/32
 IP-CIDR,209.97.163.176/32
