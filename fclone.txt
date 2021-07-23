@@ -1,22 +1,30 @@
+mkdir -p /home/animation
+mkdir -p /home/gdrive
+mkdir -p /home/mtproxy
+
+apt-get install fuse 
+
+cd /root/.config/rclone
+编辑以下内容
 [emby]
 type = drive
 scope = drive
-service_account_file = 
-service_account_file_path = 
+service_account_file = sa路径/123.json
+service_account_file_path = sa路径
 team_drive = 0ALWY01GA2U0mUk9PVA
 
 [movies]
 type = drive
 scope = drive
-service_account_file = 
-service_account_file_path = 
+service_account_file = sa路径/123.json
+service_account_file_path = sa路径
 team_drive = 0APEshgEbmf0uUk9PVA
 
 [vip]
 type = drive
 scope = drive
-service_account_file = .json
-service_account_file_path = 
+service_account_file = sa路径/123.json
+service_account_file_path = sa路径
 team_drive = 0ABT4IeyuBR6nUk9PVA
 
 
