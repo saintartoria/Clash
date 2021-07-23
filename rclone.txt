@@ -25,7 +25,7 @@ y/n> y
 
 mkdir -p /home/animation
 mkdir -p /home/gdrive
-mkdir -p /home/mtproxy
+mkdir -p /home/vip
 
 apt-get install fuse 
 
