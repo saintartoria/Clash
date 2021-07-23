@@ -1,9 +1,9 @@
+# 创建文件夹
 mkdir -p /home/animation
 mkdir -p /home/gdrive
 mkdir -p /home/mtproxy
 
-apt-get install fuse 
-
+# 设置fclone挂载
 cd /root/.config/rclone
 编辑以下内容
 [emby]
@@ -13,12 +13,12 @@ service_account_file = sa路径/123.json
 service_account_file_path = sa路径
 team_drive = 0ALWY01GA2U0mUk9PVA
 
-[movies]
-type = drive
-scope = drive
-service_account_file = sa路径/234.json
-service_account_file_path = sa路径
-team_drive = 0APEshgEbmf0uUk9PVA
+  [movies]
+  type = drive
+  scope = drive
+  service_account_file = sa路径/234.json
+  service_account_file_path = sa路径
+  team_drive = 0APEshgEbmf0uUk9PVA
 
 [vip]
 type = drive
@@ -26,7 +26,6 @@ scope = drive
 service_account_file = sa路径/456.json
 service_account_file_path = sa路径
 team_drive = 0ABT4IeyuBR6nUk9PVA
-
 
 fclone mount emby: /home/animation --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G &
 fclone mount movies: /home/gdrive --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G &
