@@ -9,12 +9,6 @@ sudo service emby-server stop
 rclone copy "/home/animation/saint.tar" "/home" -vvP
 sudo rm -rf /var/lib/emby/*
 cd /var/lib && tar -xvf "/home/saint.tar"
-备份用户数据
-sudo tar -cvf /home/embybak.tar /var/lib/emby/data/activitylog.* /var/lib/emby/data/authentication.* /var/lib/emby/data/device.txt /var/lib/emby/data/displaypreferences.* /var/lib/emby/data/lastversion.txt /var/lib/emby/data/users.* /var/lib/emby/data/wan.dat /var/lib/emby/config /var/lib/emby/logs /var/lib/emby/plugins
-恢复用户数据
-cd /var/lib
-rm -rf /var/lib/emby/data/activitylog.* /var/lib/emby/data/authentication.* /var/lib/emby/data/device.txt /var/lib/emby/data/displaypreferences.* /var/lib/emby/data/lastversion.txt /var/lib/emby/data/users.* /var/lib/emby/data/wan.dat /var/lib/emby/config /var/lib/emby/logs /var/lib/emby/plugins
-cd / && tar -xvf /home/animation/embybak.tar
 给数据库赋权
 sudo chown -R emby:emby /var/lib/emby
 重新启动 emby 服务
