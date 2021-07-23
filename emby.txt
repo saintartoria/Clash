@@ -34,9 +34,9 @@ mkdir -p /home/mtproxy
 
 apt-get install fuse 
 
-rclone mount emby: /home/animation --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G & #挂载EmbyMedia_VIP1_Movie盘
-rclone mount movies: /home/gdrive --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G & #挂载EmbyMedia_VIP1_TVdispatch_Netflix.GB.US.others盘
-rclone mount vip: /home/mtproxy --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G & #挂载EmbyMedia_VIP1_TVdispatch_TVB.JP.KR.CN.HK.TW盘
+rclone mount emby: /home/animation --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G &
+rclone mount movies: /home/gdrive --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G &
+rclone mount vip: /home/mtproxy --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G &
 
 # 动画盘设置自动挂载
 cat > /etc/systemd/system/rclone.service <<EOF
