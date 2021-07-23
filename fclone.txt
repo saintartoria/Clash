@@ -16,14 +16,14 @@ team_drive = 0ALWY01GA2U0mUk9PVA
 [movies]
 type = drive
 scope = drive
-service_account_file = sa路径/123.json
+service_account_file = sa路径/234.json
 service_account_file_path = sa路径
 team_drive = 0APEshgEbmf0uUk9PVA
 
 [vip]
 type = drive
 scope = drive
-service_account_file = sa路径/123.json
+service_account_file = sa路径/456.json
 service_account_file_path = sa路径
 team_drive = 0ABT4IeyuBR6nUk9PVA
 
@@ -31,3 +31,71 @@ team_drive = 0ABT4IeyuBR6nUk9PVA
 fclone mount emby: /home/animation --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G &
 fclone mount movies: /home/gdrive --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G &
 fclone mount vip: /home/mtproxy --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G &
+
+# 动画盘设置自动挂载
+cat > /etc/systemd/system/rclone.service <<EOF
+[Unit]
+Description=Rclone
+AssertPathIsDirectory=/home/animation
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fclone mount emby: /home/animation  --umask 0000  --default-permissions  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 12h  --vfs-read-chunk-size 64M  --vfs-read-chunk-size-limit 1G
+ExecStop=/bin/fusermount -u /home/animation
+Restart=on-abort
+User=root
+
+[Install]
+WantedBy=default.target
+EOF
+
+# Jmsooo盘设置自动挂载
+cat > /etc/systemd/system/jmsooo.service <<EOF
+[Unit]
+Description=Rclone
+AssertPathIsDirectory=/home/gdrive
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fclone mount movies: /home/gdrive  --umask 0000  --default-permissions  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 12h  --vfs-read-chunk-size 64M  --vfs-read-chunk-size-limit 1G
+ExecStop=/bin/fusermount -u /home/gdrive
+Restart=on-abort
+User=root
+
+[Install]
+WantedBy=default.target
+EOF
+
+# vip盘设置自动挂载
+cat > /etc/systemd/system/vip.service <<EOF
+[Unit]
+Description=Rclone
+AssertPathIsDirectory=/home/vip
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fclone mount vip: /home/vip  --umask 0000  --default-permissions  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 12h  --vfs-read-chunk-size 64M  --vfs-read-chunk-size-limit 1G
+ExecStop=/bin/fusermount -u /home/vip
+Restart=on-abort
+User=root
+
+[Install]
+WantedBy=default.target
+EOF
+
+# 设置开机启动
+systemctl start rclone jmsooo vip
+systemctl enable rclone jmsooo vip
+
+# 查看状态
+systemctl status rclone
+systemctl status jmsooo
+systemctl status vip
+
+# 暂停服务
+systemctl stop rclone
+systemctl stop jmsooo
+systemctl stop vip
