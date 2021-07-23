@@ -1,0 +1,9 @@
+直接删除iptables规则
+sudo rm -rf /etc/iptables && reboot
+开放所有端口
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -F
+sudo apt-get purge netfilter-persistent
+reboot
