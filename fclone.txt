@@ -3,8 +3,8 @@ mkdir -p /home/animation
 mkdir -p /home/gdrive
 mkdir -p /home/vip
 mkdir -p /home/Anime
+
 # 设置fclone挂载
-fclone config
 cat > /root/.config/rclone/rclone.conf <<EOF
 [anime]
 type = drive
