@@ -3,6 +3,9 @@ emby Github下载地址 https://github.com/MediaBrowser/Emby.Releases/releases
 apt-get install wget && wget https://github.com/MediaBrowser/Emby.Releases/releases/download/4.7.0.3/emby-server-deb_4.7.0.3_arm64.deb
 dpkg -i emby-server-deb_4.7.0.3_arm64.deb
 
+date -R
+export TZ='Asia/Shanghai'
+source ~/.bashrc
 # 打包刮削包
 sudo tar -cvf /home/saint.tar /var/lib/emby
 # 恢复刮削包
