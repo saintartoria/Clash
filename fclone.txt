@@ -3,6 +3,9 @@ mkdir -p /home/animation
 mkdir -p /home/gdrive
 mkdir -p /home/vip
 mkdir -p /home/Anime
+# 安装fclone
+chmod +x /usr/bin/fclone
+fclone --version
 
 # 设置fclone挂载
 cat > /root/.config/rclone/rclone.conf <<EOF
