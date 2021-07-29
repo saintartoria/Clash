@@ -1,0 +1,93 @@
+umount emby movies vip anime
+
+fclone mount anime: /home/Anime --allow-non-empty  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 24h  --poll-interval 3600s  --use-mmap  --vfs-read-chunk-size 1M &
+fclone mount emby: /home/animation --allow-non-empty  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 24h  --poll-interval 3600s  --use-mmap  --vfs-read-chunk-size 1M &
+fclone mount movies: /home/gdrive --allow-non-empty  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 24h  --poll-interval 3600s  --use-mmap  --vfs-read-chunk-size 1M &
+fclone mount vip: /home/vip --allow-non-empty  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 24h  --poll-interval 3600s  --use-mmap  --vfs-read-chunk-size 1M &
+
+# 新番盘设置自动挂载
+cat > /etc/systemd/system/anime.service <<EOF
+[Unit]
+Description=Rclone
+AssertPathIsDirectory=/home/Anime
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fclone mount anime: /home/Anime  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 24h  --poll-interval 3600s  --use-mmap  --vfs-read-chunk-size 1M
+ExecStop=/bin/fusermount -u /home/Anime
+Restart=on-abort
+User=root
+
+[Install]
+WantedBy=default.target
+EOF
+
+# 动画盘设置自动挂载
+cat > /etc/systemd/system/rclone.service <<EOF
+[Unit]
+Description=Rclone
+AssertPathIsDirectory=/home/animation
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fclone mount emby: /home/animation  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 24h  --poll-interval 3600s  --use-mmap  --vfs-read-chunk-size 1M
+ExecStop=/bin/fusermount -u /home/animation
+Restart=on-abort
+User=root
+
+[Install]
+WantedBy=default.target
+EOF
+
+# Jmsooo盘设置自动挂载
+cat > /etc/systemd/system/jmsooo.service <<EOF
+[Unit]
+Description=Rclone
+AssertPathIsDirectory=/home/gdrive
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fclone mount movies: /home/gdrive  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 24h  --poll-interval 3600s  --use-mmap  --vfs-read-chunk-size 1M
+ExecStop=/bin/fusermount -u /home/gdrive
+Restart=on-abort
+User=root
+
+[Install]
+WantedBy=default.target
+EOF
+
+# vip盘设置自动挂载
+cat > /etc/systemd/system/vip.service <<EOF
+[Unit]
+Description=Rclone
+AssertPathIsDirectory=/home/vip
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fclone mount vip: /home/vip  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 24h  --poll-interval 3600s  --use-mmap  --vfs-read-chunk-size 1M
+ExecStop=/bin/fusermount -u /home/vip
+Restart=on-abort
+User=root
+
+[Install]
+WantedBy=default.target
+EOF
+
+systemctl start rclone jmsooo vip anime
+systemctl enable rclone jmsooo vip anime
+
+# 查看状态
+systemctl status rclone
+systemctl status jmsooo
+systemctl status vip
+systemctl status anime
+
+# 暂停服务
+systemctl stop rclone jmsooo vip anime
+systemctl stop jmsooo
+systemctl stop vip
+systemctl stop anime
