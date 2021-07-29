@@ -77,9 +77,12 @@ User=root
 WantedBy=default.target
 EOF
 
+# 设置开机启动
+systemctl stop emby-server.service
+systemctl daemon-reload
 systemctl start rclone jmsooo vip anime
 systemctl enable rclone jmsooo vip anime
-
+systemctl start emby-server.service
 # 查看状态
 systemctl status rclone
 systemctl status jmsooo
@@ -91,3 +94,5 @@ systemctl stop rclone jmsooo vip anime
 systemctl stop jmsooo
 systemctl stop vip
 systemctl stop anime
+
+
