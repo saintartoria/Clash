@@ -22,6 +22,6 @@ sudo service emby-server start
 # 破解emby server
 systemctl stop emby-server.service
 wget -O /opt/emby-server/system/System.Net.Http.dll 'https://file.neko.re/EmbyCrack/unix-arm64/System.Net.Http.dll' --no-check-certificate
-wget -O /opt/emby-server/system/Emby.Web.dll 'https://raw.githubusercontent.com/saintartoria/Clash/master/Emby.Web.dll' --no-check-certificate
-wget -O /opt/emby-server/system/dashboard-ui/embypremiere/embypremiere.js 'https://raw.githubusercontent.com/saintartoria/Clash/master/embypremiere.js' --no-check-certificate
+wget -O /opt/emby-server/system/Emby.Web.dll 'https://raw.githubusercontent.com/saintartoria/Clash/master/emby/track4703/Emby.Web.dll' --no-check-certificate
+wget -O /opt/emby-server/system/dashboard-ui/embypremiere/embypremiere.js 'https://raw.githubusercontent.com/saintartoria/Clash/master/emby/track4703/embypremiere.js' --no-check-certificate
 systemctl start emby-server.service
