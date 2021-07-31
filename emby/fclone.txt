@@ -23,7 +23,7 @@ type = drive
 scope = drive
 service_account_file = /home/ubuntu/sa/saintforce1n217@saintforce1p11.iam.gserviceaccount.com.json
 service_account_file_path = /home/ubuntu/sa/
-team_drive = 0AIBQ3xN_7rCsUk9PVA
+team_drive = 0AL5gMbFHhrOiUk9PVA
 
 [emby]
 type = drive
