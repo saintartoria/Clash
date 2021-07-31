@@ -7,6 +7,15 @@ mkdir -p /home/Anime
 chmod +x /usr/bin/fclone
 fclone --version
 
+# 复制配置挂载
+cat > /root/.config/rclone/rclone.conf <<EOF
+[cp]
+type = drive
+scope = drive
+service_account_file = /root/cp/001ebf73805a04b7a812d93556bc83c4466a8fdf.json
+service_account_file_path = /root/cp/
+EOF
+
 # 设置fclone挂载
 cat > /root/.config/rclone/rclone.conf <<EOF
 [anime]
