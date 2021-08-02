@@ -1,0 +1,22 @@
+version: "2.3"
+services:
+  emby:
+    image: yukinococo/emby_crack
+    container_name: embyserver
+    network_mode: host
+    environment:
+      - UID=1000
+      - GID=100
+      - GIDLIST=100
+      - TZ=Asia/Shanghai
+      - UMASK_SET=022 #optional
+    volumes:
+      - /home/docker/emby/config:/config # Configuration directory
+      - /home/animation:/mnt/share1 \
+      - /home/gdrive:/mnt/2 \
+      - /home/vip:/mnt/3 \
+      - /home/Anime:/mnt/4 \
+    ports:
+      - 8096:8096
+      - 8920:8920
+    restart: unless-stopped
