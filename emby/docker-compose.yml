@@ -11,7 +11,7 @@ services:
       - TZ=Asia/Shanghai
       - UMASK_SET=022 #optional
     volumes:
-      - /home/docker/emby/config:/config # Configuration directory
+      - /home/docker/emby/config:/config
       - /home/animation:/mnt/share1 \
       - /home/gdrive:/mnt/share2 \
       - /home/vip:/mnt/share3 \
