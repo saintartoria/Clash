@@ -1,0 +1,14 @@
+docker run -d \
+    --name embyserver \
+    --volume /home/docker/emby/config:/config \
+    --volume /home/animation:/mnt/share1 \
+    --volume /home/gdrive:/mnt/share2 \
+    --volume /home/vip:/mnt/share3 \
+    --volume /home/Anime:/mnt/share4 \
+    --net=host \ 
+    --publish 8096:8096 \ 
+    --publish 8920:8920 \ 
+    --env UID=1000 \ 
+    --env GID=100 \ 
+    --env GIDLIST=100 \ 
+    yukinococo/emby_crack:latest
