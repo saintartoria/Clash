@@ -1,7 +1,7 @@
 version: "2.3"
 services:
   emby:
-    image: yukinococo/emby_crack
+    image: emby/embyserver
     container_name: embyserver
     network_mode: host
     environment:
