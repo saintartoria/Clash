@@ -14,7 +14,6 @@ IP-CIDR,125.91.16.220/32
 DOMAIN-SUFFIX,saintartoria.cn
 DOMAIN-SUFFIX,embys.online
 IP-CIDR,47.240.95.103/32
-IP-CIDR,104.18.195.240/32
 # > 流媒体老板媒体库
 DOMAIN,jellyfin-cf.uhd.moe
 DOMAIN,emby-cf.uhd.moe
