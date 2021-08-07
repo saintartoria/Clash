@@ -12,6 +12,7 @@ DOMAIN,tv.dlj.tf
 IP-CIDR,125.91.16.220/32
 # > 流媒体emby-saintartoria私服
 DOMAIN-SUFFIX,saintartoria.cn
+IP-CIDR,104.21.4.135/32
 # > 流媒体老板媒体库
 DOMAIN,jellyfin-cf.uhd.moe
 DOMAIN,emby-cf.uhd.moe
