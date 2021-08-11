@@ -26,6 +26,7 @@ y/n> y
 mkdir -p /home/animation
 mkdir -p /home/gdrive
 mkdir -p /home/vip
+mkdir -p /home/download
 
 apt-get install fuse 
 
@@ -36,6 +37,7 @@ rclone mount vip: /home/vip --umask 0000 --default-permissions --allow-non-empty
 
 rclone mount anime: /home/animation --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G & 
 rclone mount copy: /home/copy  --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G &
+rclone mount download: /home/download --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G &
 # 动画盘设置自动挂载
 cat > /etc/systemd/system/rclone.service <<EOF
 [Unit]
