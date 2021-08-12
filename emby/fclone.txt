@@ -3,6 +3,7 @@ mkdir -p /home/animation
 mkdir -p /home/gdrive
 mkdir -p /home/vip
 mkdir -p /home/Anime
+mkdir -p /home/NewAnime
 # 安装fclone
 chmod +x /usr/bin/fclone
 fclone --version
@@ -26,16 +27,26 @@ service_account_file = /home/ubuntu/cp/001ebf73805a04b7a812d93556bc83c4466a8fdf.
 service_account_file_path = /home/ubuntu/cp/
 EOF
 
-# 设置fclone挂载
+# 设置move挂载
 cat > /root/.config/rclone/rclone.conf <<EOF
 [anime]
 type = drive
 scope = drive
 service_account_file = /home/ubuntu/sa/saintforce1n217@saintforce1p11.iam.gserviceaccount.com.json
 service_account_file_path = /home/ubuntu/sa/
-team_drive = 0AL5gMbFHhrOiUk9PVA
+team_drive = 0AA41xOkUIlAQUk9PVA
+EOF
 
+# 设置fclone挂载
+cat > /root/.config/rclone/rclone.conf <<EOF
 [emby]
+type = drive
+scope = drive
+service_account_file = /home/ubuntu/sa/saintforce1n217@saintforce1p11.iam.gserviceaccount.com.json
+service_account_file_path = /home/ubuntu/sa/
+team_drive = 0AA41xOkUIlAQUk9PVA
+
+[anime]
 type = drive
 scope = drive
 service_account_file = /home/ubuntu/sa/saintforce1n1000@saintforce1p50.iam.gserviceaccount.com.json
