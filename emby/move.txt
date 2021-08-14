@@ -1,0 +1,19 @@
+cat > /root/.config/rclone/rclone.conf <<EOF
+[download]
+type = drive
+scope = drive
+service_account_file = /home/ubuntu/sa/saintforce1n102@saintforce1p6.iam.gserviceaccount.com.json
+service_account_file_path = /home/ubuntu/sa/
+team_drive = 0APB-ngSE6izMUk9PVA
+[anime]
+type = drive
+scope = drive
+service_account_file = /home/ubuntu/sa/saintforce1n188@saintforce1p10.iam.gserviceaccount.com.jsonn
+service_account_file_path = /home/ubuntu/sa/
+team_drive = 0AA41xOkUIlAQUk9PVA
+[cp]
+type = drive
+scope = drive
+service_account_file = /home/ubuntu/cp/0a33e36c1565dc1881a083b40793e75d8d2ab7d8.json
+service_account_file_path = /home/ubuntu/cp/
+EOF
