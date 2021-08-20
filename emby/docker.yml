@@ -11,12 +11,23 @@ docker run -d \
   -p 8080:8080 \
   -v /home/u2/qbittorrent/config:/config \
   -v /home/u2/qbittorrent/downloads:/downloads \
-  -v /usr/bin/fclone:/usr/local/bin/fclone \
+  -v /home/download:/home/download \
+  -v /home/u2/qbittorrent/config/rclone:/root/.config/rclone \
   --restart unless-stopped \
   linuxserver/qbittorrent:version-14.3.6.99202107121017-7389-3ac8c97e6ubuntu20.04.1
 
+docker exec -it qbittorrent /bin/bash
+apt-get update
+apt-get upgrade
+apt-get install wget
 
-
+wget  https://github.com/mawaya/rclone/releases/download/fclone-v0.4.1/fclone-v0.4.1-linux-amd64.zip
+unzip -o -j fclone*.zip -d /usr/bin
+rm fclone*.zip
+chmod +x /usr/bin/fclone
+fclone --version
+mkdir -p /home/download
+ 
 docker run -d \
   --name=qbittorrent \
   -e PUID=1000 \
