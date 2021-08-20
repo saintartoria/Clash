@@ -2,6 +2,7 @@ curl -sSL https://get.daocloud.io/docker | sh
 
 docker run -d \
   --name=qbittorrent \
+  --network host  \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Asia/Shanghai \
@@ -14,7 +15,7 @@ docker run -d \
   -v /home/download:/home/download \
   -v /home/u2/qbittorrent/config/rclone:/root/.config/rclone \
   --restart unless-stopped \
-  linuxserver/qbittorrent:version-14.3.6.99202107121017-7389-3ac8c97e6ubuntu20.04.1
+  linuxserver/qbittorrent:14.3.5.99202106211645-7376-e25948e73ubuntu20.04.1-ls140
 
 docker exec -it qbittorrent /bin/bash
 apt-get update
@@ -27,7 +28,8 @@ rm fclone*.zip
 chmod +x /usr/bin/fclone
 fclone --version
 mkdir -p /home/download
- 
+
+
 docker run -d \
   --name=qbittorrent \
   -e PUID=1000 \
