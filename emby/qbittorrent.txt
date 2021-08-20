@@ -1,4 +1,4 @@
-cat > /etc/systemd/system/qbittorrent-nox.service-nox.service <<EOF
+cat > /etc/systemd/system/qbittorrent-nox.service <<EOF
 [Unit]
 Description=qBittorrent-nox
 After=network.target
