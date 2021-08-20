@@ -1,3 +1,5 @@
+curl -sSL https://get.daocloud.io/docker | sh
+
 docker run -d \
     --name embyserver \
     --volume /home/docker/emby/config:/config \
@@ -12,3 +14,37 @@ docker run -d \
     --env GID=100 \ 
     --env GIDLIST=100 \ 
     yukinococo/emby_crack:latest
+
+
+
+docker run -d \
+  --name=qbittorrent \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Asia/Shanghai \
+  -e WEBUI_PORT=8080 \
+  -p 55555:55555 \
+  -p 6881:6881/udp \
+  -p 8080:8080 \
+  -v /home/u2/qbittorrent/config:/config \
+  -v /home/u2/qbittorrent/downloads:/downloads \
+  -v /usr/bin/fclone:/usr/local/bin/fclone \
+  --restart unless-stopped \
+  linuxserver/qbittorrent:version-14.3.6.99202107121017-7389-3ac8c97e6ubuntu20.04.1
+
+
+
+docker run -d \
+  --name=qbittorrent \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Asia/Shanghai \
+  -e WEBUI_PORT=8080 \
+  -p 55555:55555 \
+  -p 6881:6881/udp \
+  -p 8080:8080 \
+  -v /home/qbittorrent/config:/config \
+  -v /home/qbittorrent/downloads:/downloads \
+  -v /usr/bin/fclone:/usr/local/bin/fclone \
+  --restart unless-stopped \
+  linuxserver/qbittorrent:version-14.3.6.99202107121017-7389-3ac8c97e6ubuntu20.04.1
