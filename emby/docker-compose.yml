@@ -12,10 +12,12 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - /home/docker/emby/config:/config
-      - /home/animation:/mnt/share1 \
-      - /home/gdrive:/mnt/share2 \
-      - /home/vip:/mnt/share3 \
-      - /home/Anime:/mnt/share4 \
+      - /home/animation:/home/animation \
+      - /home/gdrive:/home/gdrive \
+      - /home/vip:/home/vip \
+      - /home/Anime:/home/Anime \
+      - /home/ubuntu/rclone:/root/.config/rclone \
+      
     ports:
       - 8096:8096
       - 8920:8920
