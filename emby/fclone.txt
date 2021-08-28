@@ -1,5 +1,5 @@
 # 创建文件夹
-mkdir -p /home/film
+mkdir -p /home/film /home/domestic /home/documentary /home/asia /home/american 
 mkdir -p /home/domestic
 mkdir -p /home/documentary
 mkdir -p /home/asia
@@ -263,10 +263,28 @@ User=root
 [Install]
 WantedBy=default.target
 EOF
- 
+
+# music盘设置自动挂载
+cat > /etc/systemd/system/music.service <<EOF
+[Unit]
+Description=Rclone
+AssertPathIsDirectory=/home/music
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fclone mount music: /home/music  --umask 0000  --default-permissions  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 12h  --vfs-read-chunk-size 64M  --vfs-read-chunk-size-limit 1G
+ExecStop=/bin/fusermount -u /home/music
+Restart=on-abort
+User=root
+
+[Install]
+WantedBy=default.target
+EOF
+
 # 设置开机启动
-systemctl start rclone jmsooo vip anime film domestic documentary asia american
-systemctl enable rclone jmsooo vip anime film domestic documentary asia american
+systemctl start rclone jmsooo vip anime film domestic documentary asia american music
+systemctl enable rclone jmsooo vip anime film domestic documentary asia american music
 
 # 查看状态
 systemctl status rclone
