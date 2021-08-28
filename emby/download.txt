@@ -1,0 +1,75 @@
+mkdir -p /home/NewAnime
+
+# CHD下载配置挂载
+cat > /root/.config/rclone/rclone.conf <<EOF
+[download]
+type = drive
+scope = drive
+service_account_file = /home/ubuntu/sa/saintforce1n1000@saintforce1p50.iam.gserviceaccount.com.json
+service_account_file_path = /home/ubuntu/sa/
+team_drive = 0APB-ngSE6izMUk9PVA
+EOF
+
+# 复制配置挂载
+cat > /root/.config/rclone/rclone.conf <<EOF
+[cp]
+type = drive
+scope = drive
+service_account_file = /home/ubuntu/cp/001ebf73805a04b7a812d93556bc83c4466a8fdf.json
+service_account_file_path = /home/ubuntu/cp/
+EOF
+
+# 设置move挂载
+cat > /root/.config/rclone/rclone.conf <<EOF
+[move]
+type = drive
+scope = drive
+service_account_file = /home/ubuntu/sa/saintforce1n217@saintforce1p11.iam.gserviceaccount.com.json
+service_account_file_path = /home/ubuntu/sa/
+team_drive = 0AA41xOkUIlAQUk9PVA
+EOF
+
+fclone mount download: /home/download --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G &
+fclone mount copy: /home/copy --umask 0000 --default-permissions --allow-non-empty --allow-other --buffer-size 32M --dir-cache-time 12h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 1G &
+
+# CHD下载盘设置自动挂载
+cat > /etc/systemd/system/download.service <<EOF
+[Unit]
+Description=Rclone
+AssertPathIsDirectory=/home/download
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fclone mount download: /home/download  --umask 0000  --default-permissions  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 12h  --vfs-read-chunk-size 64M  --vfs-read-chunk-size-limit 1G
+ExecStop=/bin/fusermount -u /home/download
+Restart=on-abort
+User=root
+
+[Install]
+WantedBy=default.target
+EOF
+
+
+# 复制下载盘设置自动挂载
+cat > /etc/systemd/system/copy.service <<EOF
+[Unit]
+Description=Rclone
+AssertPathIsDirectory=/home/copy
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount copy: /home/copy  --umask 0000  --default-permissions  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 12h  --vfs-read-chunk-size 64M  --vfs-read-chunk-size-limit 1G
+ExecStop=/bin/fusermount -u /home/copy
+Restart=on-abort
+User=root
+
+[Install]
+WantedBy=default.target
+EOF
+
+systemctl enable
+systemctl start
+systemctl status
+systemctl stop 
