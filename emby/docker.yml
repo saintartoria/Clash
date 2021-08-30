@@ -1,5 +1,7 @@
 curl -sSL https://get.daocloud.io/docker | sh
 
+mkdir -p /home/qbittorrent /home/qbittorrent/downloads /home/qbittorrent/config /home/qbittorrent/config/rclone
+
 docker run -d \
   --name=qbittorrent \
   --network host  \
@@ -10,10 +12,10 @@ docker run -d \
   -p 55555:55555 \
   -p 6881:6881/udp \
   -p 8080:8080 \
-  -v /home/u2/qbittorrent/config:/config \
-  -v /home/u2/qbittorrent/downloads:/downloads \
+  -v /home/qbittorrent/config:/config \
+  -v /home/qbittorrent/downloads:/downloads \
   -v /home/download:/home/download \
-  -v /home/u2/qbittorrent/config/rclone:/root/.config/rclone \
+  -v /home/qbittorrent/config/rclone:/root/.config/rclone \
   --restart unless-stopped \
   linuxserver/qbittorrent:14.3.5.99202106211645-7376-e25948e73ubuntu20.04.1-ls140
 
@@ -27,7 +29,7 @@ unzip -o -j fclone*.zip -d /usr/bin
 rm fclone*.zip
 chmod +x /usr/bin/fclone
 fclone --version
-mkdir -p /home/download
+  mkdir -p /home/download
 
 
 docker run -d \
