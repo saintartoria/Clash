@@ -6,17 +6,21 @@ dpkg -i emby-server-deb_4.7.0.3_arm64.deb
 date -R
 export TZ='Asia/Shanghai'
 source ~/.bashrc
-# 打包刮削包
-sudo tar -cvf /home/saint.tar /var/lib/emby
-# 恢复刮削包
-停止 emby 服务
+# 迁移刮削包
 sudo service emby-server stop
-rclone copy "/home/animation/saint.tar" "/home" -vvP
+zip -r /home/ubuntu/saint0904.zip /var/lib/emby
+
+fclone copy "/home/ubuntu/saint0904.zip" "/home/animation" -vvP
+
+fclone copy "/home/animation/saint0904.zip" "/home/ubuntu" -vvP
+
 sudo rm -rf /var/lib/emby/*
-cd /var/lib && tar -xvf "/home/saint.tar"
-给数据库赋权
+
+unzip saint*.zip -d  /home/ex
+
+mv /home/ex/var/lib/emby /var/lib
+
 sudo chown -R emby:emby /var/lib/emby
-重新启动 emby 服务
 sudo service emby-server start
 
 # 破解emby server
