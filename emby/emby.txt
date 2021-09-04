@@ -9,23 +9,17 @@ source ~/.bashrc
 # 迁移刮削包
 sudo service emby-server stop
 zip -r /home/ubuntu/saint0904.zip /var/lib/emby
-
 fclone copy "/home/ubuntu/saint0904.zip" "/home/animation" -vvP
-
 fclone copy "/home/animation/saint0904.zip" "/home/ubuntu" -vvP
-
 sudo rm -rf /var/lib/emby/*
-
 unzip saint*.zip -d  /home/ex
-
 mv /home/ex/var/lib/emby /var/lib
-
 sudo chown -R emby:emby /var/lib/emby
 sudo service emby-server start
 
 # 破解emby server
 systemctl stop emby-server.service
-wget -O /opt/emby-server/system/System.Net.Http.dll 'https://file.neko.re/EmbyCrack/unix-arm64/System.Net.Http.dll' --no-check-certificate
+wget -O /opt/emby-server/system/System.Net.Http.dll 'https://raw.githubusercontent.com/saintartoria/Clash/master/emby/track4703/System.Net.Http.dll' --no-check-certificate
 wget -O /opt/emby-server/system/Emby.Web.dll 'https://raw.githubusercontent.com/saintartoria/Clash/master/emby/track4703/Emby.Web.dll' --no-check-certificate
 wget -O /opt/emby-server/system/dashboard-ui/embypremiere/embypremiere.js 'https://raw.githubusercontent.com/saintartoria/Clash/master/emby/track4703/embypremiere.js' --no-check-certificate
 systemctl start emby-server.service
