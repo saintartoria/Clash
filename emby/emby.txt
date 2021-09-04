@@ -13,7 +13,7 @@ fclone copy "/home/ubuntu/saint0904.zip" "/home/animation" -vvP
 fclone copy "/home/animation/saint0904.zip" "/home/ubuntu" -vvP
 sudo rm -rf /var/lib/emby/*
 unzip saint*.zip -d  /home/ex
-mv /home/ex/var/lib/emby /var/lib
+mv /home/ex/var/lib/emby/* /var/lib/emby/*
 sudo chown -R emby:emby /var/lib/emby
 sudo service emby-server start
 
