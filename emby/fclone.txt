@@ -103,7 +103,7 @@ fclone mount american: /home/american --umask 0000 --default-permissions --allow
 
 
 # 动画盘设置自动挂载
-cat > /etc/systemd/system/anime.service <<EOF
+cat > /etc/systemd/system/rclone.service <<EOF
 [Unit]
 Description=Rclone
 AssertPathIsDirectory=/home/Anime
@@ -111,7 +111,7 @@ After=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/fclone mount anime: /home/Anime  --umask 0000  --default-permissions  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 12h  --vfs-read-chunk-size 64M  --vfs-read-chunk-size-limit 1G
+ExecStart=/usr/bin/fclone mount emby: /home/Anime  --umask 0000  --default-permissions  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 12h  --vfs-read-chunk-size 64M  --vfs-read-chunk-size-limit 1G
 ExecStop=/bin/fusermount -u /home/Anime
 Restart=on-abort
 User=root
@@ -121,7 +121,7 @@ WantedBy=default.target
 EOF
 
 # 新番盘设置自动挂载
-cat > /etc/systemd/system/rclone.service <<EOF
+cat > /etc/systemd/system/anime.service <<EOF
 [Unit]
 Description=Rclone
 AssertPathIsDirectory=/home/animation
@@ -129,7 +129,7 @@ After=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/fclone mount emby: /home/animation  --umask 0000  --default-permissions  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 12h  --vfs-read-chunk-size 64M  --vfs-read-chunk-size-limit 1G
+ExecStart=/usr/bin/fclone mount anime: /home/animation  --umask 0000  --default-permissions  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 12h  --vfs-read-chunk-size 64M  --vfs-read-chunk-size-limit 1G
 ExecStop=/bin/fusermount -u /home/animation
 Restart=on-abort
 User=root
