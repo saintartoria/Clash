@@ -23,14 +23,14 @@ type = drive
 scope = drive
 service_account_file = /home/ubuntu/sa/saintforce1n7@saintforce1p1.iam.gserviceaccount.com.json
 service_account_file_path = /home/ubuntu/sa/
-team_drive = 0AA41xOkUIlAQUk9PVA
+team_drive = 0ALWY01GA2U0mUk9PVA
 
 [anime]
 type = drive
 scope = drive
 service_account_file = /home/ubuntu/sa/saintforce1n32@saintforce1p2.iam.gserviceaccount.com.json
 service_account_file_path = /home/ubuntu/sa/
-team_drive = 0ALWY01GA2U0mUk9PVA
+team_drive = 0AA41xOkUIlAQUk9PVA
 
 [movies]
 type = drive
