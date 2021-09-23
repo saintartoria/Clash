@@ -4,20 +4,18 @@ mkdir -p /home/qbittorrent /home/qbittorrent/downloads /home/qbittorrent/config 
 
 docker run -d \
   --name=qbittorrent \
+  --network host  \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Asia/Shanghai \
   -e WEBUI_PORT=8080 \
-  -p 55555:55555 \
-  -p 6881:6881/udp \
-  -p 8080:8080 \
   -v /home/qbittorrent/config:/config \
   -v /home/qbittorrent/downloads:/downloads \
   -v /home/qbittorrent/config/rclone:/root/.config/rclone \
   --restart unless-stopped \
   linuxserver/qbittorrent:14.3.5.99202106211645-7376-e25948e73ubuntu20.04.1-ls140  
   
-  --network host  \
+
   
 docker exec -it qbittorrent /bin/bash
 apt-get update
@@ -40,7 +38,7 @@ docker run -d \
   -p 8080:8080 \
   -v /home/qbittorrent/config:/config \
   -v /home/qbittorrent/downloads:/downloads \
-  -v /usr/bin/fclone:/usr/bin/fclone \
+  -v /usr/bin/rclone:/usr/bin/rclone \
   --restart unless-stopped \
   linuxserver/qbittorrent:version-14.3.6.99202107121017-7389-3ac8c97e6ubuntu20.04.1
 
