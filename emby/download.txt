@@ -9,6 +9,15 @@ service_account_file_path = /config/sa/
 team_drive = 0AAS774tJkv8lUk9PVA
 EOF
 
+cat > /root/.config/rclone/rclone.conf <<EOF
+[download]
+type = drive
+scope = drive
+service_account_file = /config/sa/saintforce1n1000@saintforce1p50.iam.gserviceaccount.com.json
+service_account_file_path = /config/sa/
+team_drive = 0AA41xOkUIlAQUk9PVA
+EOF
+
 # CHD下载配置挂载
 cat > /root/.config/rclone/rclone.conf <<EOF
 [download]
