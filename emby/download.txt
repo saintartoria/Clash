@@ -16,7 +16,7 @@ type = drive
 scope = drive
 service_account_file = /home/ubuntu/sa/saintforce1n1000@saintforce1p50.iam.gserviceaccount.com.json
 service_account_file_path = /home/ubuntu/sa/
-team_drive = 0APB-ngSE6izMUk9PVA
+team_drive = 0AA41xOkUIlAQUk9PVA
 EOF
 
 # 复制配置挂载
