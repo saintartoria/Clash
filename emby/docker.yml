@@ -15,7 +15,7 @@ docker run -d \
   -v /home/saint/copy:/home/copy \
   -v /home/saint/animation:/home/animation \
   --restart unless-stopped \ 
-  wfarn86/python3.8-requests
+  python:latest
   
 
 docker run -d \
