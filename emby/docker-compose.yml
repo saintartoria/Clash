@@ -22,3 +22,23 @@ services:
       - 8096:8096
       - 8920:8920
     restart: unless-stopped
+
+
+# cat docker-compose.yml 
+
+
+version: "2.0"
+services:
+  bot:
+    image: python:3.8
+    container_name: bot
+    restart: always
+    tty: true
+    network_mode: bridge
+    hostname: bot
+    volumes:
+      - /home/saint/bot/transfer:/transfer \
+      - /home/saint/bot/move:/move \
+      - /home/saint/bot/push:/push \
+      - /home/saint/copy:/home/copy \
+      - /home/saint/animation:/home/animation \
