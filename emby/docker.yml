@@ -5,16 +5,12 @@ mkdir -p /home/qbittorrent /home/qbittorrent/downloads /home/qbittorrent/config 
 
 docker run -d \
   --name=animebot \
-  --network host  \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=Asia/Shanghai \
   -v /home/saint/bot/transfer:/transfer \
   -v /home/saint/bot/move:/move \
   -v /home/saint/bot/push:/push \
   -v /home/saint/copy:/home/copy \
   -v /home/saint/animation:/home/animation \
-  --restart unless-stopped \ 
+  --restart unless-stopped \
   tfalconnet/python3.8
 
 docker run -d \
