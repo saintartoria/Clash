@@ -2,6 +2,22 @@ curl -sSL https://get.daocloud.io/docker | sh
 
 mkdir -p /home/qbittorrent /home/qbittorrent/downloads /home/qbittorrent/config /home/qbittorrent/config/rclone
 
+
+docker run -d \
+  --name=animebot \
+  --network host  \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Asia/Shanghai \
+  -v /home/saint/bot/transfer:/transfer \
+  -v /home/saint/bot/move:/move \
+  -v /home/saint/bot/push:/push \
+  -v /home/saint/copy:/home/copy \
+  -v /home/saint/animation:/home/animation \
+  --restart unless-stopped \ 
+  wfarn86/python3.8-requests
+  
+
 docker run -d \
   --name=qbittorrent \
   --network host  \
