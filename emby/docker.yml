@@ -15,8 +15,7 @@ docker run -d \
   -v /home/saint/copy:/home/copy \
   -v /home/saint/animation:/home/animation \
   --restart unless-stopped \ 
-  python:latest
-  
+  tfalconnet/python3.8
 
 docker run -d \
   --name=qbittorrent \
