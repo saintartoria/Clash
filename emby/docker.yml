@@ -24,6 +24,7 @@ docker run -d \
   -v /home/qbittorrent/downloads:/downloads \
   -v /home/qbittorrent/config/rclone:/root/.config/rclone \
   --restart unless-stopped \
+  linuxserver/qbittorrent:version-14.3.6.99202107121017-7389-3ac8c97e6ubuntu20.04.1
   linuxserver/qbittorrent:14.3.5.99202106211645-7376-e25948e73ubuntu20.04.1-ls140  
   
 
@@ -49,7 +50,7 @@ docker run -d \
   -p 8080:8080 \
   -v /home/qbittorrent/config:/config \
   -v /home/qbittorrent/downloads:/downloads \
-  -v /usr/bin/rclone:/usr/bin/rclone \
+  -v /home/qbittorrent/config/rclone:/root/.config/rclone \
   --restart unless-stopped \
   linuxserver/qbittorrent:version-14.3.6.99202107121017-7389-3ac8c97e6ubuntu20.04.1
 
