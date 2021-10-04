@@ -25,3 +25,4 @@ IP-CIDR,104.18.195.240/32
 DOMAIN,jellyfin-cf.uhd.moe
 DOMAIN,emby-cf.uhd.moe
 DOMAIN,embys.online
+DOMAIN-SUFFIX,hdchina.org
