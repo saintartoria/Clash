@@ -1,33 +1,43 @@
 version: "2.3"
 services:
-  emby:
-    image: emby/embyserver
-    container_name: embyserver
-    network_mode: host
+  emby-source:
+    image: emby/embyserver_arm64v8:beta
+    container_name: embysource
     environment:
-      - UID=1000
-      - GID=100
-      - GIDLIST=100
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Shanghai
       - UMASK_SET=022 #optional
     volumes:
-      - /home/docker/emby/config:/config
-      - /home/animation:/home/animation \
-      - /home/gdrive:/home/gdrive \
-      - /home/vip:/home/vip \
-      - /home/Anime:/home/Anime \
-      - /home/ubuntu/rclone:/root/.config/rclone \
-      
+      - ./source:/config
+      - /home:/home
     ports:
       - 8096:8096
-      - 8920:8920
+    restart: unless-stopped
+
+version: "2.3"
+services:
+  qbittorrent:
+    image: ghcr.io/linuxserver/qbittorrent
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - WEBUI_PORT=8080
+    volumes:
+      - /home/qbittorrent/config:/config
+      - /home/qbittorrent/downloads:/downloads
+      - /home/qbittorrent/config/rclone:/root/.config/rclone
+    ports:
+      - 55555:55555
+      - 6881:6881/udp
+      - 8080:8080
+    network_mode: bridge
     restart: unless-stopped
 
 
-# cat docker-compose.yml 
-
-
-version: "2.0"
+version: "2.3"
 services:
   bot:
     image: python:3.8
