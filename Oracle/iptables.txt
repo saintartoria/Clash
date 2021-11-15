@@ -8,8 +8,12 @@ sudo iptables -F
 sudo apt-get purge netfilter-persistent
 reboot
 
-
+改密码登陆
 echo root:password |sudo chpasswd root
 sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config;
 sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config;
 sudo service sshd restart
+
+更改时区
+timedatectl set-timezone Asia/Shanghai
+timedatectl set-ntp yes
