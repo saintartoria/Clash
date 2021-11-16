@@ -17,3 +17,9 @@ sudo service sshd restart
 更改时区
 timedatectl set-timezone Asia/Shanghai
 timedatectl set-ntp yes
+
+
+dd甲骨文
+curl -fLO https://raw.githubusercontent.com/bohanyang/debi/master/debi.sh && chmod a+rx debi.sh
+sudo ./debi.sh --cdn --network-console --ethx --bbr --user root --password <新系统用户密码>
+sudo shutdown -r now
