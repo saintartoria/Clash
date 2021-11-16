@@ -1,3 +1,4 @@
+# 防火墙规则删除
 直接删除iptables规则
 sudo rm -rf /etc/iptables && reboot
 开放所有端口
@@ -8,18 +9,20 @@ sudo iptables -F
 sudo apt-get purge netfilter-persistent
 reboot
 
-改密码登陆
+# 改密码登陆
 echo root:password |sudo chpasswd root
 sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config;
 sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config;
 sudo service sshd restart
 
-更改时区
+# dd甲骨文
+curl -fLO https://raw.githubusercontent.com/bohanyang/debi/master/debi.sh && chmod a+rx debi.sh
+sudo ./debi.sh --cdn --network-console --ethx --bbr --user root --password <新系统用户密码>
+sudo shutdown -r now
+
+# 更改时区
 timedatectl set-timezone Asia/Shanghai
 timedatectl set-ntp yes
 
 
-dd甲骨文
-curl -fLO https://raw.githubusercontent.com/bohanyang/debi/master/debi.sh && chmod a+rx debi.sh
-sudo ./debi.sh --cdn --network-console --ethx --bbr --user root --password <新系统用户密码>
-sudo shutdown -r now
+
