@@ -1,6 +1,6 @@
 apt update && apt install curl sudo wget -y
 curl -sSL https://get.docker.com/ | sh
-sudo apt-get install docker-compose
+sudo apt-get install docker-compose -y
 
 sudo apt-get install python3-pip
 sudo pip3 install docker-compose
