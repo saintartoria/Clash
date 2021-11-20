@@ -17,7 +17,12 @@ chmod +x /usr/bin/fclone
 fclone --version
 
 # 设置fclone挂载
-
+[TVseries]
+type = drive
+scope = drive
+service_account_file = /home/ubuntu/sa/saintforce1n74@saintforce1p4.iam.gserviceaccount.com.json
+service_account_file_path = /home/ubuntu/sa/
+team_drive = 0ACd6fg9EnFwfUk9PVA
 
 [movies]
 type = drive
@@ -274,9 +279,27 @@ User=root
 WantedBy=default.target
 EOF
 
+# 剧集盘设置自动挂载
+cat > /etc/systemd/system/TVseries.service <<EOF
+[Unit]
+Description=Rclone
+AssertPathIsDirectory=/home/TVseries
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fclone mount TVseries: /home/TVseries  --umask 0000  --default-permissions  --allow-non-empty  --allow-other  --buffer-size 32M  --dir-cache-time 12h  --vfs-read-chunk-size 64M  --vfs-read-chunk-size-limit 1G
+ExecStop=/bin/fusermount -u /home/TVseries
+Restart=on-abort
+User=root
+
+[Install]
+WantedBy=default.target
+EOF
+
 # 设置开机启动
-systemctl start rclone vip anime film domestic documentary asia american music jmsooo
-systemctl enable rclone vip anime film domestic documentary asia american music jmsooo
+systemctl start TVseries rclone vip anime film domestic documentary asia american music jmsooo
+systemctl enable TVseries rclone vip anime film domestic documentary asia american music jmsooo
 
 # 查看状态
 systemctl status rclone
