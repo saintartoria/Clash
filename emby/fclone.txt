@@ -10,6 +10,9 @@ mkdir -p /home/vip
 mkdir -p /home/Anime
 mkdir -p /home/music
 
+
+
+apt-get install fuse
 # 安装fclone
 
 bash <(wget -qO- https://git.io/JJYE0)
