@@ -52,5 +52,4 @@ DOMAIN,ru.odysseyplus.site
 # > 流媒体终点站服务器
 DOMAIN-SUFFIX,pub1.emby.wtf
 # > 流媒体emby-saintartoria私服
-IP-CIDR,140.238.198.155/32
-IP-CIDR,152.67.204.12/32
+IP-CIDR,146.56.119.98/32
