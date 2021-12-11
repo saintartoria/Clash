@@ -5,24 +5,10 @@ DOMAIN,spd.kwz.io
 DOMAIN,rn.kwz.io
 DOMAIN,gy.kwz.io
 DOMAIN,kk.kwz.io
-IP-CIDR,178.170.46.165/32
-# > 流媒体emby-Plus私服
-DOMAIN,tv.dlj.tf
-IP-CIDR,125.91.16.220/32
-# > 流媒体emby-Yoona私服
-DOMAIN-SUFFIX,yoona.vip
 IP-CIDR,94.130.36.117/32
 # > 流媒体emby-saintartoria私服
 DOMAIN-SUFFIX,saintartoria.cn
-DOMAIN-SUFFIX,embys.online
-DOMAIN-SUFFIX,wanganmidnight.uk
-IP-CIDR,47.240.95.103/32
-IP-CIDR,104.19.249.223/32
-IP-CIDR,104.16.84.192/32
-IP-CIDR,104.21.4.135/32
-IP-CIDR,104.18.195.240/32
-# > 流媒体老板媒体库
-DOMAIN,jellyfin-cf.uhd.moe
-DOMAIN,emby-cf.uhd.moe
-DOMAIN,embys.online
-DOMAIN-SUFFIX,hdchina.org
+IP-CIDR,146.56.112.194/32
+IP-CIDR,193.123.67.93/32
+# > 流媒体plex
+DOMAIN-SUFFIX,plex.direct
