@@ -53,3 +53,4 @@ DOMAIN,ru.odysseyplus.site
 DOMAIN-SUFFIX,pub1.emby.wtf
 # > 流媒体emby-saintartoria私服
 IP-CIDR,146.56.119.98/32
+IP-CIDR,88.99.218.218/32
