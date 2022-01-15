@@ -11,4 +11,4 @@ DOMAIN-SUFFIX,saintartoria.cn
 IP-CIDR,146.56.112.194/32
 IP-CIDR,193.123.67.93/32
 # > 流媒体plex
-DOMAIN-SUFFIX,plex.direct
+#DOMAIN-SUFFIX,plex.direct
