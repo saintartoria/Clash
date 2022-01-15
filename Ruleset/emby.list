@@ -35,22 +35,8 @@ DOMAIN,servers.xeton.dev
 DOMAIN,emby.otakudrive.life
 DOMAIN,emby2.otakudrive.life
 # > 流媒体卷毛鼠服务器
-DOMAIN,jmsooo.com
-DOMAIN,cf.jmsooo.com
-DOMAIN,hk.jmsooo.com
-DOMAIN,sg.jmsooo.com
+DOMAIN-SUFFIX,jmsooo.com
 # > 流媒体Odyssey服务器
-DOMAIN,cf.odysseyplus.site
-DOMAIN,agahk.odysseyplus.site
-DOMAIN,agasg.odysseyplus.site
-DOMAIN,ru.odysseyplus.site
-# > 流媒体Odyssey服务器
-DOMAIN,cf.odysseyplus.site
-DOMAIN,agahk.odysseyplus.site
-DOMAIN,agasg.odysseyplus.site
-DOMAIN,ru.odysseyplus.site
+DOMAIN-SUFFIX,odysseyplus.site
 # > 流媒体终点站服务器
-DOMAIN-SUFFIX,pub1.emby.wtf
-# > 流媒体emby-saintartoria私服
-IP-CIDR,146.56.119.98/32
-IP-CIDR,88.99.218.218/32
+DOMAIN-SUFFIX,emby.wtf
