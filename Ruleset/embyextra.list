@@ -1,20 +1,6 @@
 # > 流媒体emby-kk后花园
-DOMAIN,i.kwz.io
-DOMAIN,emby.kwz.io
-DOMAIN,spd.kwz.io
-DOMAIN,rn.kwz.io
-DOMAIN,gy.kwz.io
-DOMAIN,kk.kwz.io
-IP-CIDR,94.130.36.117/32
+DOMAIN-SUFFIX,kwz.io
 # > 流媒体emby-saintartoria私服reader.
-DOMAIN,reader.saintartoria.cn
-DOMAIN,nginx.saintartoria.cn
-DOMAIN,asuka.saintartoria.cn
-DOMAIN,kato.saintartoria.cn
-DOMAIN,ql.saintartoria.cn
-DOMAIN,oa.saintartoria.cn
-DOMAIN,ym.saintartoria.cn
-IP-CIDR,146.56.112.194/32
-IP-CIDR,193.123.67.93/32
+DOMAIN-SUFFIX,saintartoria.cn
 # > 流媒体plex
 DOMAIN-SUFFIX,plex.direct
