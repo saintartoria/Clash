@@ -52,3 +52,32 @@ services:
       - /home/saint/bot/push:/push
       - /home/saint/copy:/home/copy
       - /home/saint/animation:/home/animation
+
+
+# flexget
+version: '2'
+services:
+    flexget:
+      image:  ghcr.io/apocalypsor/flexget
+      container_name: flexget
+      hostname: flexget
+      environment:
+        FG_WEBUI_PASSWD: Chen*1990 # 替换为你自己的密码，登录 Web 用
+        FG_LOG_LEVEL: INFO 
+        TZ: Asia/Shanghai
+        PUID: 1000
+        PGID: 1000
+      volumes:
+        - ./config:/config
+        - /config/plugins
+        - ./downloads:/downloads
+      ports:
+        - 3539:3539
+
+
+
+      restart: always
+      logging:
+        driver: "json-file"
+        options:
+          max-size: "200k"
