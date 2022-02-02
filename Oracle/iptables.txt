@@ -38,5 +38,7 @@ net.ipv4.tcp_syncookies = 1
 net.ipv4.tcp_congestion_control = bbr
 EOF
 
+sysctl -p && sysctl --system
+
 # 设置流量转发
 wget -N --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/socat.sh && chmod +x socat.sh && bash socat.sh
