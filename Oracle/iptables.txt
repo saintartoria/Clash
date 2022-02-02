@@ -24,5 +24,19 @@ sudo shutdown -r now
 timedatectl set-timezone Asia/Shanghai
 timedatectl set-ntp yes
 
+# 设置bbr
+cat > /etc/sysctl.conf <<EOF
+fs.file-max = 1048576
+net.core.rmem_max = 67108864
+net.core.wmem_max = 67108864
+net.ipv4.tcp_mem = 25600 51200 102400
+net.ipv4.tcp_rmem = 4096 87380 67108864
+net.ipv4.tcp_wmem = 4096 65536 67108864
+net.core.somaxconn = 10240
+net.core.default_qdisc = fq
+net.ipv4.tcp_syncookies = 1
+net.ipv4.tcp_congestion_control = bbr
+EOF
 
-
+# 设置流量转发
+wget -N --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/socat.sh && chmod +x socat.sh && bash socat.sh
