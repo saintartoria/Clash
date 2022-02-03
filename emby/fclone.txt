@@ -300,6 +300,24 @@ User=root
 WantedBy=default.target
 EOF
 
+cat > /etc/systemd/system/download.service <<EOF
+[Unit]
+Description=Rclone
+AssertPathIsDirectory=/home/qb/downloads
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fclone mount download: /home/qb/downloads  --umask 0000  --default-permissions  --allow-non-empty  --allow-other  --buffer-size 256M --dir-cache-time 24h  --vfs-read-chunk-size 512M  --vfs-read-chunk-size-limit 4G
+ExecStop=/bin/fusermount -u /home/qb/downloads
+Restart=on-abort
+User=root
+
+[Install]
+WantedBy=default.target
+EOF
+
+
 # 设置开机启动
 systemctl start TVseries rclone vip anime film domestic documentary asia american music jmsooo
 systemctl enable TVseries rclone vip anime film domestic documentary asia american music jmsooo
