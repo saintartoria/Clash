@@ -318,6 +318,25 @@ WantedBy=default.target
 EOF
 
 
+cat > /etc/systemd/system/qbittorrent-nox.service <<EOF
+[Unit]
+Description=qBittorrent Daemon Service
+After=network.target
+
+[Service]
+#UMask=000
+Type=forking
+LimitNOFILE=infinity
+ExecStart=/usr/bin/qbittorrent-nox -d –webui-port=8080
+ExecStop=/usr/bin/killall -s 9 /usr/bin/qbittorrent-nox
+Restart=on-failure
+#TimeoutSec=300
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
 # 设置开机启动
 systemctl start TVseries rclone vip anime film domestic documentary asia american music jmsooo
 systemctl enable TVseries rclone vip anime film domestic documentary asia american music jmsooo
