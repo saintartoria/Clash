@@ -110,6 +110,95 @@ services:
       - 8096:8096
     restart: unless-stopped
 
+# plex
+version: "2.1"
+services:
+  plex:
+    image: lscr.io/linuxserver/plex
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - VERSION=docker
+      - PLEX_CLAIM=claim-
+    volumes:
+      - ./plex:/config
+      - /home/plex:/home
+    restart: unless-stopped
+
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    restart: always
+    #环境变量,设置为上海时区
+    environment:
+        - TZ=Asia/Shanghai
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: plex --cleanup --schedule "0 5 * * * *" 
+
+# npm
+version: '3'
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    environment:
+      DB_MYSQL_HOST: "db"
+      DB_MYSQL_PORT: 3306
+      DB_MYSQL_USER: "npm"
+      DB_MYSQL_PASSWORD: "npm"
+      DB_MYSQL_NAME: "npm"
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+  db:
+    image: 'jc21/mariadb-aria:latest'
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 'npm'
+      MYSQL_DATABASE: 'npm'
+      MYSQL_USER: 'npm'
+      MYSQL_PASSWORD: 'npm'
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+
+#reader3
+version: '3.1'
+# 多用户版
+services:
+  read_all:
+    image: hectorqin/reader
+    container_name: reader #容器名 可自行修改
+    restart: always
+    ports:
+      - 8080:8080 #4396端口映射可自行修改
+    volumes:
+      - /home/reader3/log:/log #log映射目录 /home/reader/log 可自行修改
+      - /home/reader3/storage:/storage #数据映射目录 /home/reader/storage 可自行修改
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - READER_APP_SECURE=true
+      - READER_APP_SECUREKEY=hjsmw1990com  #管理员密码  可自行修改
+      - READER_APP_INVITECODE=ylsyyds #注册邀请码,如需要取消注释 可自行修改
+    command: java -jar /app/bin/reader.jar
+# 自动更新docker
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    restart: always
+    #环境变量,设置为上海时区
+    environment:
+        - TZ=Asia/Shanghai
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: reader --cleanup --schedule "0 0 4 * * *" 
 
 # flexget
 version: '2'
