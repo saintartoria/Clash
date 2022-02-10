@@ -2,65 +2,98 @@ apt update && apt install curl sudo wget -y
 curl -sSL https://get.docker.com/ | sh
 sudo apt-get install docker-compose -y
 
-sudo apt-get install python3-pip
-sudo pip3 install docker-compose
+# autobot
+version: "2.0"
+services:
+  bot:
+    image: python:3.8
+    container_name: bot
+    restart: always
+    tty: true
+    network_mode: bridge
+    hostname: bot
+    volumes:
+      - /home/saint:/home
 
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+# qb
+version: "2.1"
+services:
+  qb:
+    image: linuxserver/qbittorrent
+    container_name: qb
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - WEBUI_PORT=8080
+    volumes:
+      - /home/qb/config:/config
+      - /home/qb/downloads:/downloads
+      - /home/qb/config/rclone:/root/.config/rclone
+    ports:
+      - 55555:55555
+      - 6881:6881/udp
+      - 8080:8080
+    network_mode: bridge
+    restart: unless-stopped
+    
+# Aria2系列
+version: "3.3"
+services:
+  aria2:
+    image: p3terx/aria2-pro
+    container_name: aria2
+    environment:
+      - PUID=0
+      - PGID=0
+      - UMASK_SET=022
+      - RPC_SECRET=<key>
+      - RPC_PORT=6800
+      - LISTEN_PORT=6888
+      - DISK_CACHE=64M
+      - IPV6_MODE=false
+      - UPDATE_TRACKERS=true
+      - CUSTOM_TRACKER_URL=
+      - TZ=Asia/Shanghai
+      - SPECIAL_MODE=rclone
+    volumes:
+      - /home/aria2/config:/config
+      - /home/aria2/downloads:/downloads
+    ports:
+      - 6800:6800
+      - 6888:6888
+    network_mode: host
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
 
-mkdir -p /home/qbittorrent /home/qbittorrent/downloads /home/qbittorrent/config /home/qbittorrent/config/rclone
+  AriaNg:
+    image: p3terx/ariang
+    container_name: ariang
+    command: --port 6880 --ipv6
+    network_mode: host
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+
+  Aria2Bot:
+    image: p3terx/tele-aria2:0.2.2
+    container_name: aria2bot
+    volumes:
+      - /home/aria2/.tele-aria2-conf.json:/config.json
+    network_mode: host
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
 
 
-docker run -d \
-  --name=animebot \
-  -v /home/saint/bot/transfer:/transfer \
-  -v /home/saint/bot/move:/move \
-  -v /home/saint/bot/push:/push \
-  -v /home/saint/copy:/home/copy \
-  -v /home/saint/animation:/home/animation \
-  --restart unless-stopped \
-  python:3.8
-
-docker run -d \
-  --name=qbittorrent \
-  --network host  \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=Asia/Shanghai \
-  -e WEBUI_PORT=8080 \
-  -v /home/qbittorrent/config:/config \
-  -v /home/qbittorrent/downloads:/downloads \
-  -v /home/qbittorrent/config/rclone:/root/.config/rclone \
-  --restart unless-stopped \
-  linuxserver/qbittorrent:version-14.3.6.99202107121017-7389-3ac8c97e6ubuntu20.04.1
-  linuxserver/qbittorrent:14.3.5.99202106211645-7376-e25948e73ubuntu20.04.1-ls140  
-  
-
-  
-docker exec -it qbittorrent /bin/bash
-apt-get update
-apt-get install wget
-
-wget  https://github.com/mawaya/rclone/releases/download/fclone-v0.4.1/fclone-v0.4.1-linux-amd64.zip
-unzip -o -j fclone*.zip -d /usr/bin
-rm fclone*.zip
-chmod +x /usr/bin/fclone
-fclone --version
-
-docker run -d \
-  --name=qbittorrent \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=Asia/Shanghai \
-  -e WEBUI_PORT=8080 \
-  -p 55555:55555 \
-  -p 6881:6881/udp \
-  -p 8080:8080 \
-  -v /home/qbittorrent/config:/config \
-  -v /home/qbittorrent/downloads:/downloads \
-  -v /home/qbittorrent/config/rclone:/root/.config/rclone \
-  --restart unless-stopped \
-  linuxserver/qbittorrent:version-14.3.6.99202107121017-7389-3ac8c97e6ubuntu20.04.1
-
+# librespeed
 docker run -d \
   --name=librespeed \
   -e PUID=1000 \
