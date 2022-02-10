@@ -12,18 +12,17 @@ ExecStart=/usr/bin/qbittorrent-nox -d
 WantedBy=multi-user.target
 EOF
 
-#LisenGD-scan
+
+# LisenGD-scan
 cat > /etc/systemd/system/LisenGD.service <<EOF
 [Unit]
 Description=ListenGdActivity
 After=network-online.target
-
 [Service]
 Type=simple
 ExecStart=/home/ListenGdActivity/build/ListenGdActivity -conf /home/ListenGdActivity/build/config.json
 Restart=on-abort
 User=root
-
 [Install]
 WantedBy=default.target
 EOF
