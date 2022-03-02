@@ -230,14 +230,18 @@ services:
 
 
 # librespeed
-docker run -d \
-  --name=librespeed \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=Asia/Shanghai \
-  -e PASSWORD=password \
-  -p 7788:80 \
-  -v /root/ls/config:/config \
-  --restart always \
-  ghcr.io/linuxserver/librespeed
-  
+version: '3.3'
+services:
+    linuxserver:
+        container_name: librespeed
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Asia/Shanghai
+            - PASSWORD=password
+        ports:
+            - '7788:80'
+        volumes:
+            - '/root/ls/config:/config'
+        restart: always
+        image: ghcr.io/linuxserver/librespeed
