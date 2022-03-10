@@ -18,7 +18,15 @@ sudo service sshd restart
 # dd甲骨文
 curl -fLO https://raw.githubusercontent.com/bohanyang/debi/master/debi.sh && chmod a+rx debi.sh
 sudo ./debi.sh --cdn --network-console --ethx --bbr --user root --password <新系统用户密码>
+
+# x86通用
+bash <(wget --no-check-certificate -qO- 'https://git.io/JeiRm') -d 10 -v 64 -a -p <新系统用户密码>
+
+# arm通用
+bash <(wget --no-check-certificate -qO- 'https://git.io/JLyvq') -d 10 -v 64 -a -p <新系统用户密码>
+
 sudo shutdown -r now
+swap off
 
 # 更改时区
 timedatectl set-timezone Asia/Shanghai
