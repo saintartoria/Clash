@@ -59,7 +59,8 @@ services:
     volumes:
       - /home/aria2/config:/config
       - /home/aria2/config/rclone:/usr/local/bin/rclone
-      - /home/aria2/config/sa:/service-account
+      - /home/qb/config/rclone.conf:/root/.config/rclone/rclone.conf
+      - /home/aria2/config/sa:/sa
       - /home/aria2/downloads:/downloads
     ports:
       - 6800:6800
