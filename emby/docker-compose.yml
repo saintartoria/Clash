@@ -58,6 +58,8 @@ services:
       - SPECIAL_MODE=rclone
     volumes:
       - /home/aria2/config:/config
+      - /home/aria2/config/rclone:/usr/local/bin/rclone
+      - /home/aria2/config/sa:/service-account
       - /home/aria2/downloads:/downloads
     ports:
       - 6800:6800
