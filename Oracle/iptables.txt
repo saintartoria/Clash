@@ -69,5 +69,9 @@ EOF
 
 sysctl -p && sysctl --system
 
+cat > /etc/hostname <<EOF
+neko-download-center
+EOF
+
 # 设置流量转发
 wget -N --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/socat.sh && chmod +x socat.sh && bash socat.sh
