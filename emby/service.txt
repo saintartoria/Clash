@@ -26,3 +26,9 @@ User=root
 [Install]
 WantedBy=default.target
 EOF
+
+mkdir -p mkdir -p /home/plex/anime /home/plex/asiadrama /home/plex/cndrama /home/plex/documentary /home/plex/movies /home/plex/onair /home/plex/usdrama /home/plex/music /home/emby/anime /home/emby/asiadrama /home/emby/cndrama /home/emby/documentary /home/emby/movies /home/emby/onair /home/emby/usdrama /home/emby/music
+
+systemctl start emby-anime emby-asia emby-cn emby-doc emby-movies emby-onair emby-usa emby-music plex-anime plex-asia plex-cn plex-doc plex-movies plex-onair plex-usa plex-music
+
+systemctl enable emby-anime emby-asia emby-cn emby-doc emby-movies emby-onair emby-usa emby-music plex-anime plex-asia plex-cn plex-doc plex-movies plex-onair plex-usa plex-music
