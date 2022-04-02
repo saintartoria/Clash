@@ -11,5 +11,8 @@ DOMAIN,cc.inori.vip
 DOMAIN,sg.inori.vip
 DOMAIN,cc.inori.vip
 DOMAIN,sl.inori.vip
+DOMAIN,book.inori.vip
+DOMAIN,plex.inori.vip
+DOMAIN,emby.inori.vip
 # > 流媒体plex
 DOMAIN-SUFFIX,plex.direct
