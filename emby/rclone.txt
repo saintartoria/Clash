@@ -22,8 +22,3 @@ y/n> y
 
 y) Yes this is OK (default)
 y/n> y
-
-mkdir -p /home/animation
-mkdir -p /home/gdrive
-mkdir -p /home/vip
-mkdir -p /home/download
