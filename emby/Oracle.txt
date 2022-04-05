@@ -34,6 +34,9 @@ bash <(wget --no-check-certificate -qO- 'https://git.io/JLyvq') -d 11 -v 64 -a -
 swap off
 
 # 更改时区
+export TZ='Asia/Shanghai'
+source ~/.bashrc
+
 timedatectl set-timezone Asia/Shanghai
 timedatectl set-ntp yes
 
