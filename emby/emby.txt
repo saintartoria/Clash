@@ -1,8 +1,3 @@
-# 安装emby
-emby Github下载地址 https://github.com/MediaBrowser/Emby.Releases/releases
-apt-get install wget && wget https://github.com/MediaBrowser/Emby.Releases/releases/download/4.7.0.13/emby-server-deb_4.7.0.13_arm64.deb
-dpkg -i emby-server-deb_4.7.0.13_arm64.deb
-
 date -R
 export TZ='Asia/Shanghai'
 source ~/.bashrc
@@ -19,7 +14,4 @@ sudo service emby-server start
 
 # 破解emby server
 systemctl stop emby-server.service
-wget -O /opt/emby-server/system/System.Net.Http.dll 'https://raw.githubusercontent.com/saintartoria/Clash/master/emby/track4703/System.Net.Http.dll' --no-check-certificate
-wget -O /opt/emby-server/system/Emby.Web.dll 'https://raw.githubusercontent.com/saintartoria/Clash/master/emby/track4703/Emby.Web.dll' --no-check-certificate
-wget -O /opt/emby-server/system/dashboard-ui/embypremiere/embypremiere.js 'https://raw.githubusercontent.com/saintartoria/Clash/master/emby/track4703/embypremiere.js' --no-check-certificate
 systemctl start emby-server.service
