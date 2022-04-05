@@ -11,12 +11,13 @@ services:
     volumes:
       - /home/saint:/home
 
-# qb
+# qbittorrent
 version: "2.1"
 services:
   qb:
     image: linuxserver/qbittorrent
     container_name: qb
+    hostname: qbittorrent
     environment:
       - PUID=1000
       - PGID=1000
@@ -39,6 +40,7 @@ services:
   aria2:
     image: p3terx/aria2-pro
     container_name: aria2
+    hostname: aria2
     environment:
       - PUID=0
       - PGID=0
@@ -70,6 +72,7 @@ services:
   AriaNg:
     image: p3terx/ariang
     container_name: ariang
+    hostname: ariang
     command: --port 6880 --ipv6
     network_mode: host
     restart: unless-stopped
@@ -81,6 +84,7 @@ services:
   Aria2Bot:
     image: p3terx/tele-aria2:0.2.2
     container_name: aria2bot
+    hostname: aria2bot
     volumes:
       - /home/aria2/.tele-aria2-conf.json:/config.json
     network_mode: host
@@ -96,6 +100,7 @@ services:
   emby:
     image: linuxserver/emby:beta-version-4.7.0.20
     container_name: emby
+    hostname: emby
     environment:
       - PUID=1000
       - PGID=1000
@@ -114,6 +119,7 @@ services:
   plex:
     image: lscr.io/linuxserver/plex
     container_name: plex
+    hostname: plex
     network_mode: host
     environment:
       - PUID=1000
@@ -129,6 +135,7 @@ services:
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower
+    hostname: watchtower
     restart: always
     #环境变量,设置为上海时区
     environment:
@@ -143,6 +150,7 @@ services:
   app:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
+    hostname: npm
     ports:
       - '80:80'
       - '81:81'
@@ -159,6 +167,7 @@ services:
   db:
     image: 'jc21/mariadb-aria:latest'
     restart: unless-stopped
+    hostname: db
     environment:
       MYSQL_ROOT_PASSWORD: 'npm'
       MYSQL_DATABASE: 'npm'
@@ -173,6 +182,7 @@ version: '3.1'
 services:
   read_all:
     image: hectorqin/reader
+    hostname: reader
     container_name: reader #容器名 可自行修改
     restart: always
     ports:
@@ -190,6 +200,7 @@ services:
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower
+    hostname: watchtower
     restart: always
     #环境变量,设置为上海时区
     environment:
@@ -232,6 +243,8 @@ version: '3.3'
 services:
     linuxserver:
         container_name: librespeed
+        hostname: librespeed
+        image: linuxserver/librespeed
         environment:
             - PUID=1000
             - PGID=1000
@@ -242,4 +255,3 @@ services:
         volumes:
             - '/root/ls/config:/config'
         restart: always
-        image: ghcr.io/linuxserver/librespeed
