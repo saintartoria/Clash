@@ -1,7 +1,3 @@
-apt update && apt install curl sudo wget -y
-curl -sSL https://get.docker.com/ | sh
-sudo apt-get install docker-compose -y
-
 # autobot
 version: "2.0"
 services:
