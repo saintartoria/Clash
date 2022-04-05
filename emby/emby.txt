@@ -1,6 +1,3 @@
-date -R
-export TZ='Asia/Shanghai'
-source ~/.bashrc
 # 迁移刮削包
 sudo service emby-server stop
 zip -r /home/ubuntu/saint0904.zip /var/lib/emby
@@ -12,6 +9,5 @@ mv /home/ex/var/lib/emby/* /var/lib/emby
 sudo chown -R emby:emby /var/lib/emby
 sudo service emby-server start
 
-# 破解emby server
 systemctl stop emby-server.service
 systemctl start emby-server.service
