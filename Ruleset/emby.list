@@ -26,8 +26,7 @@ DOMAIN,embyserver.ga
 DOMAIN-SUFFIX,plusmedia.site
 DOMAIN-SUFFIX,xeton.dev
 # > 流媒体emby-Otaku体验服
-DOMAIN,emby.otakudrive.life
-DOMAIN,emby2.otakudrive.life
+DOMAIN-SUFFIX,otakudrive.life
 # > 流媒体卷毛鼠服务器
 DOMAIN-SUFFIX,jmsooo.com
 # > 流媒体Odyssey服务器
