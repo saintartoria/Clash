@@ -17,7 +17,7 @@ DOMAIN,cn2.kws.moe
 DOMAIN,bgp.kws.moe
 DOMAIN-SUFFIX,hdsky.me
 DOMAIN-SUFFIX,pterclub.com
-DOMAIN-SUFFIX,kato.inorimoe.com
-DOMAIN-SUFFIX,megumi.inorimoe.com
-DOMAIN-SUFFIX,kato.ikuramoe.com
-DOMAIN-SUFFIX,megumi.ikuramoe.com
+DOMAIN,kato.inorimoe.com
+DOMAIN,megumi.inorimoe.com
+DOMAIN,kato.ikuramoe.com
+DOMAIN,megumi.ikuramoe.com
