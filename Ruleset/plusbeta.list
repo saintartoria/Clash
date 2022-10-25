@@ -1,6 +1,8 @@
 # > 流媒体emby-paoche服务器
-DOMAIN,emby.cjpc.cc
-DOMAIN,aria.cjpc.cc
+DOMAIN,emby.cjpc.tv
+DOMAIN,cf.cjpc.tv
+DOMAIN,cloud.cjpc.tv
+DOMAIN,kato.cjpc.tv
 # > 流媒体emby-flowercloud服务器
 DOMAIN,emby.flowercloud.yt
 # > 流媒体emby-maying服务器
