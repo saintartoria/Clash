@@ -33,7 +33,7 @@ DOMAIN-SUFFIX,amazon.co.jp
 DOMAIN,m.media-amazon.com
 DOMAIN,unagi-fe.amazon.com
 DOMAIN,unagi.amazon.co.jp
-DOMAIN,ipv6.unagi-na.amazon.com:443
+DOMAIN,ipv6.unagi-na.amazon.com
 DOMAIN,images-fe.ssl-images-amazon.com
 DOMAIN,completion.amazon.co.jp
 
