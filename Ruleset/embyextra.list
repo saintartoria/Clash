@@ -1,18 +1,6 @@
 # > 流媒体emby-kk后花园
 DOMAIN-SUFFIX,kwz.io
-# > 流媒体emby-saintartoria私服
-DOMAIN-SUFFIX,saintartoria.cn
+# > 流媒体emby私服
 DOMAIN-SUFFIX,st8.one
-DOMAIN,book.cjpc.cc
-DOMAIN,fr.inori.vip
-DOMAIN,kr.inori.vip
-DOMAIN,az.0oo0o0.xyz
-DOMAIN,cc.inori.vip
-DOMAIN,sg.inori.vip
-DOMAIN,cc.inori.vip
-DOMAIN,sl.inori.vip
-DOMAIN,book.inori.vip
-DOMAIN,plex.inori.vip
-DOMAIN,emby.inori.vip
 # > 流媒体plex
 DOMAIN-SUFFIX,plex.direct
