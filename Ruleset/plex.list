@@ -1,3 +1,14 @@
+DOMAIN-SUFFIX,hdsky.me
+DOMAIN-SUFFIX,pterclub.com
+DOMAIN,kato.inorimoe.com
+DOMAIN,megumi.inorimoe.com
+DOMAIN,kato.ikuramoe.com
+DOMAIN,megumi.ikuramoe.com
+DOMAIN,minase.ikuramoe.com
+DOMAIN,frankfurt.cjpc.tv
+DOMAIN,minase.cjpc.tv
+DOMAIN,avalon.cjpc.tv
+DOMAIN,reader.cjpc.tv
 IP-CIDR,111.45.30.0/24
 IP-CIDR,139.219.12.0/24
 IP-CIDR,41.77.0.0/16
@@ -7,12 +18,3 @@ IP-CIDR,185.212.0.0/16
 IP-CIDR,23.133.5.0/24
 IP-CIDR,185.218.7.0/24
 IP-CIDR,38.59.230.0/24
-DOMAIN,kato.inorimoe.com
-DOMAIN,megumi.inorimoe.com
-DOMAIN,kato.ikuramoe.com
-DOMAIN,megumi.ikuramoe.com
-DOMAIN-SUFFIX,hdsky.me
-DOMAIN-SUFFIX,pterclub.com
-DOMAIN,minase.cjpc.tv
-DOMAIN,avalon.cjpc.tv
-DOMAIN,frankfurt.cjpc.tv
