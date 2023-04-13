@@ -2,7 +2,7 @@
 apt update && apt install curl sudo wget -y
 curl -sSL https://get.docker.com/ | sh
 sudo apt-get install docker-compose -y
-systemctl restart docker
+service docker restart
 
 # 防火墙规则删除
 直接删除iptables规则
