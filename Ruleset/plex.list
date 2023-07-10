@@ -1,9 +1,7 @@
 DOMAIN-SUFFIX,hdbits.org
 DOMAIN-SUFFIX,hdsky.me
 DOMAIN-SUFFIX,pterclub.com
-DOMAIN,kato.inorimoe.com
-DOMAIN,megumi.inorimoe.com
-DOMAIN,universe.inorimoe.com
+DOMAIN,universe.ikuramoe.com
 DOMAIN,kato.ikuramoe.com
 DOMAIN,megumi.ikuramoe.com
 DOMAIN,minase.ikuramoe.com
@@ -17,6 +15,7 @@ IP-CIDR,139.219.12.0/24
 IP-CIDR,41.77.0.0/16
 IP-CIDR,154.40.0.0/16
 IP-CIDR,154.7.0.0/16
+IP-CIDR,154.9.0.0/16
 IP-CIDR,185.212.0.0/16
 IP-CIDR,23.133.5.0/24
 IP-CIDR,185.218.7.0/24
