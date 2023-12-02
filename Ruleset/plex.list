@@ -13,8 +13,8 @@ DOMAIN,minase.cjpc.tv
 DOMAIN,avalon.cjpc.tv
 DOMAIN,reader.cjpc.tv
 DOMAIN,thzzt.cjpc.tv
-DOMAIN,broadcasthe.net
 DOMAIN-SUFFIX,broadcasthe.net
+DOMAIN,broadcasthe.net
 IP-CIDR,154.40.0.0/16
 IP-CIDR,154.7.0.0/16
 IP-CIDR,154.9.0.0/16
