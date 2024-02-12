@@ -7,6 +7,8 @@ DOMAIN,megumi.ikuramoe.com
 DOMAIN,minase.ikuramoe.com
 DOMAIN-SUFFIX,broadcasthe.net
 DOMAIN,broadcasthe.net
+DOMAIN-SUFFIX,passthepopcorn.me
+DOMAIN,passthepopcorn.me
 IP-CIDR,154.40.0.0/16
 IP-CIDR,154.7.0.0/16
 IP-CIDR,154.9.0.0/16
