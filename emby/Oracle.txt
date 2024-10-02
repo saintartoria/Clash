@@ -1,7 +1,7 @@
 #安装docker-compose
 apt update && apt install curl sudo wget nginx screen -y
 curl -sSL https://get.docker.com/ | sh
-curl -SL  https://github.com/docker/compose/releases/download/v2.29.5/docker-compose-linux-x86_64 -o /usr/bin/docker-compose && chmod +x /usr/bin/docker-compose
+curl -SL  https://github.com/docker/compose/releases/download/v2.29.7/docker-compose-linux-x86_64 -o /usr/bin/docker-compose && chmod +x /usr/bin/docker-compose
 service docker restart
 
 # 防火墙规则删除
