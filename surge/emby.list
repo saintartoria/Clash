@@ -38,3 +38,4 @@ IP-CIDR,138.2.0.0/16,no-resolve
 IP-CIDR,129.159.0.0/16,no-resolve
 IP-CIDR,193.123.0.0/16,no-resolve
 IP-CIDR,132.145.0.0/16,no-resolve
+IP-CIDR,23.158.0.0/16,no-resolve
