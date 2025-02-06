@@ -6,6 +6,8 @@ curl -SL  https://github.com/docker/compose/releases/download/v2.32.4/docker-com
 curl -SL   https://github.com/sjtuross/StrmAssistant/releases/download/v1.0.0.45/StrmAssistantLite.dll -o /mnt/servers/emby/plugins/StrmAssistantLite.dll && chown -R bin:bin /mnt/servers/emby/plugins/StrmAssistantLite.dll
 service docker restart
 
+sudo ln -s /usr/bin/ffprobe /opt/emby-server/system/ffprobe
+sudo ln -s /usr/bin/ffmpeg /opt/emby-server/system/ffmpeg
 # 防火墙规则删除
 直接删除iptables规则
 sudo rm -rf /etc/iptables && reboot
